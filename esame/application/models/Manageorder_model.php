@@ -1,61 +1,36 @@
 <?php
 
-class Manageorder_Model extends CI_Model
+class Ordine_Model extends CI_Model
 {
 
     public function manage_order_info()
     {
         $this->db->select('*');
-        $this->db->from('tbl_order');
-        $this->db->join('tbl_customer', 'tbl_customer.customer_id = tbl_order.customer_id');
-        $this->db->join('tbl_shipping', 'tbl_shipping.shipping_id = tbl_order.shipping_id');
+        $this->db->from('ordine');
         $result = $this->db->get();
         return $result->result();
     }
 
-    public function order_info_by_id($order_id)
+    public function order_info_by_id($date,$ora,$piva)
     {
         $this->db->select('*');
-        $this->db->from('tbl_order');
-        $this->db->where('order_id', $order_id);
+        $this->db->from('ordine');
+        $this->db->where('data', $date);
+        $this->db->where('ora', $ora);
+        $this->db->where('piva', $piva);
+
         $result = $this->db->get();
         return $result->row();
     }
 
-    public function customer_info_by_id($custoemr_id)
+ 	public function delete_ordine_info($id)
     {
-        $this->db->select('*');
-        $this->db->from('tbl_customer');
-        $this->db->where('customer_id', $custoemr_id);
-        $result = $this->db->get();
-        return $result->row();
+        $this->db->where('ordine', $id);
+        return $this->db->delete('ordine');
     }
 
-    public function shipping_info_by_id($shipping_id)
-    {
-        $this->db->select('*');
-        $this->db->from('tbl_shipping');
-        $this->db->where('shipping_id', $shipping_id);
-        $result = $this->db->get();
-        return $result->row();
-    }
-
-    public function payment_info_by_id($payment_id)
-    {
-        $this->db->select('*');
-        $this->db->from('tbl_payment');
-        $this->db->where('payment_id', $payment_id);
-        $result = $this->db->get();
-        return $result->row();
-    }
-
-    public function orderdetails_info_by_id($order_id)
-    {
-        $this->db->select('*');
-        $this->db->from('tbl_order_details');
-        $this->db->where('order_id', $order_id);
-        $result = $this->db->get();
-        return $result->result();
-    }
-
+    public function save_ordine_info($data)
+        {
+            return $this->db->insert('ordine', $data);
+        }
 }
