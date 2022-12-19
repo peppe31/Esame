@@ -8,10 +8,8 @@ class Web extends CI_Controller
     public function index()
     {
         $data                          = array();
-        /* $data['all_featured_products'] = $this->web_model->get_all_featured_product();
-        $data['all_new_products']      = $this->web_model->get_all_new_product(); */
+        $data['all_featured_products'] = $this->ordine_model->manage_order_info();
         $this->load->view('web/inc/header');
-        $this->load->view('web/inc/slider');
         $this->load->view('web/pages/home', $data);
         $this->load->view('web/inc/footer');
     }
