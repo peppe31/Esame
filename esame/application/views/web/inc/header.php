@@ -18,13 +18,13 @@
             $('#dc_mega-menu-orange').dcMegaMenu({rowItems: '4', speed: 'fast', effect: 'fade'});
         });
     </script>
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('uploads/'); ?>" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url('uploads/'); ?><?php echo get_option('site_logo'); ?>" />
 </head>
 <body>
     <div class="wrap">
         <div class="header_top">
             <div class="logo">
-                <a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('uploads/'); ?>" alt="" /></a>
+                <a href="<?php echo base_url('/'); ?>"><img src="<?php echo base_url('uploads/'); ?><?php echo get_option('site_logo'); ?>" alt="" /></a>
             </div>
             <div class="header_top_right">
                 <div class="search_box">
