@@ -36,23 +36,23 @@
             <div class="col_1_of_4 span_1_of_4">
                 <h4>Contact</h4>
                 <ul>
-                    <li><span><?php echo get_option('site_contact_num1');?></span></li>
-                    <li><span><?php echo get_option('site_contact_num2');?></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
                 </ul>
                 <div class="social-icons">
                     <h4>Follow Us</h4>
                     <ul>
-                        <li class="facebook"><a href="<?php echo get_option('site_facebook_link');?>" target="_blank"> </a></li>
-                        <li class="twitter"><a href="<?php echo get_option('site_twitter_link');?>" target="_blank"> </a></li>
-                        <li class="googleplus"><a href="<?php echo get_option('site_google_plus_link');?>" target="_blank"> </a></li>
-                        <li class="contact"><a href="<?php echo get_option('site_email_link');?>" target="_blank"> </a></li>
+                        <li class="facebook"><a href="" target="_blank"> </a></li>
+                        <li class="twitter"><a href="" target="_blank"> </a></li>
+                        <li class="googleplus"><a href="" target="_blank"> </a></li>
+                        <li class="contact"><a href="" target="_blank"> </a></li>
                         <div class="clear"></div>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copy_right">
-            <p><b><?php echo get_option('site_copyright');?></b></p>
+            <p><b></b></p>
         </div>
     </div>
 </div>
