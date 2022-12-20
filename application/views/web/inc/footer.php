@@ -72,17 +72,7 @@
     });
 </script>
 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
-<link href="<?php echo base_url()?>assets/web/css/flexslider.css" rel='stylesheet' type='text/css' />
-<script defer src="<?php echo base_url()?>assets/web/js/jquery.flexslider.js"></script>
-<script type="text/javascript">
-    $(window).load(function () {
-        $('.flexslider').flexslider({
-            animation: "slide",
-            start: function (slider) {
-                $('body').removeClass('loading');
-            }
-        });
-    });
-</script>
+<link href="assets/style.css" rel='stylesheet' type='text/css' />
+
 </body>
 </html>

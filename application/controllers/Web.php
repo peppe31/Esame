@@ -8,10 +8,12 @@ class Web extends CI_Controller
     public function index()
     {
         $data                          = array();
+		$data['prodotti']=$this->speciePiantina_model->get_all_product();
         $this->load->view('web/inc/header');
-        $this->load->view('web/pages/home', $data);
-        $this->load->view('web/inc/footer');
-    }
+		$this->load->view('web/pages/home', $data);
+		$this->load->view('web/inc/footer');
+
+	}
 
     public function contact()
     {
