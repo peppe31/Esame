@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <head>
-    <title>Store Website</title>
+    <title>PolyPlant</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link href="assets/web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -24,20 +24,20 @@
     <div class="wrap">
         <div class="header_top">
             <div class="logo">
-                <a href=""><img src="" alt="" /></a>
+                <a href="web"><img style="width: 350px;height:180px" src="assets/web/images/immagini/logo.png" alt="" /></a>
             </div>
             <div class="header_top_right">
                 <div class="search_box">
                     <form method="get" action="">
-                        <input type="text" placeholder="Search for Products" name="search">
-                        <input type="submit" value="SEARCH">
+                        <input style="border:none;border-radius: 20px" type="text" placeholder="Cerca prodotti" name="search">
+                        <input style="background-color: #00A300;border-radius: 20px" type="submit" value="CERCA">
                     </form>
                 </div>
                 <div class="shopping_cart">
                     <div class="cart">
                         <a href="" title="View my shopping cart" rel="nofollow">
-                            <span class="cart_title">Cart</span>
-                            <span class="no_product">(<?php echo $this->cart->total_items();?> Items)</span>
+                            <span class="cart_title">Carrello</span>
+                            <span class="no_product">(<?php echo $this->cart->total_items();?> Articoli)</span>
                         </a>
                     </div>
                 </div>
@@ -45,10 +45,10 @@
                 $customer_id = $this->session->userdata('customer_id');
                 if ($customer_id) {
                     ?>
-                    <div class="login"><a href="">Logout</a></div>
+                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="">Logout</a></div>
                 <?php } else {
                     ?>
-                    <div class="login"><a href="">login</a></div>
+                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="">Login</a></div>
 
                     <?php
                 }
@@ -63,24 +63,24 @@
                 if ($this->uri->uri_string() == '') {
                     echo "active";
                 }
-                ?>"><a href="">Home</a></li>
+                ?>"><a href="./">Home</a></li>
                 <li class="<?php
-                if ($this->uri->uri_string() == 'product') {
+                if ($this->uri->uri_string() == 'prodotti') {
                     echo "active";
                 }
-                ?>"><a href="">Products</a> </li>
+                ?>"><a href="./prodotti">Prodotti</a> </li>
                     <?php if ($this->cart->total_items()) { ?>
                     <li class="<?php
                     if ($this->uri->uri_string() == 'cart') {
                         echo "active";
                     }
-                    ?>"><a href="">Cart</a></li>
+                    ?>"><a href="">Carrello</a></li>
                     <?php } ?>
                 <li class="<?php
                 if ($this->uri->uri_string() == 'contact') {
                     echo "active";
                 }
-                ?>"><a href="">Contact</a> </li>
+                ?>"><a href="">Contattaci</a> </li>
                 
                 <?php if(!$this->session->userdata('customer_id')){?>
                 
@@ -93,7 +93,7 @@
                 if ($this->uri->uri_string() == 'customer/register') {
                     echo "active";
                 }
-                ?>"><a href="">Register</a> </li>
+                ?>"><a href="">Registrati</a> </li>
                 
                 <?php }?>
                 
