@@ -23,7 +23,7 @@ class Web extends CI_Controller
         $this->load->view('web/inc/footer');
     }
 
-	public function prodotti()
+	public function product()
 	{
 		$data                          = array();
 		$data['prodotti']=$this->speciePiantina_model->get_all_product();
@@ -44,11 +44,10 @@ class Web extends CI_Controller
     public function single($id)
     {
         $data                       = array();
-        $data['get_single_product'] = $this->web_model->get_single_product($id);
-        $data['get_all_category']   = $this->web_model->get_all_category();
-        $this->load->view('web/inc/header');
-        $this->load->view('web/pages/single', $data);
-        $this->load->view('web/inc/footer');
+        $data['prodotto'] = $this->speciePiantina_model->get_single_specie($id);
+		$this->load->view('web/inc/header');
+		$this->load->view('web/pages/single', $data);
+		$this->load->view('web/inc/footer');
     }
 
     public function error()

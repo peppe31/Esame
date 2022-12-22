@@ -19,7 +19,7 @@
                     <h2><?php echo $single_feature_product->nome; ?> </h2>
                     <p><?php echo $single_feature_product->stagione ?></p>
                     <p><span class="price"><?php echo $this->cart->format_number($single_feature_product->costo); ?> $</span></p>
-                    <div class="button"><span><a href="" class="details">Details</a></span></div>
+                    <div class="button"><span><a style="background-color: #b1dfbb;border-radius: 10px" href="<?php echo "/single/".$single_feature_product->cod_specie?>" class="details">Dettagli</a></span></div>
                 </div>
 
             <?php } ?> 

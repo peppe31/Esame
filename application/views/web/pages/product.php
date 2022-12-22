@@ -21,7 +21,7 @@
                         <h2><?php echo $single_products->nome ?></h2>
                         <p><?php echo $single_products->stagione ?></p>
                         <p><span class="price"><?php echo $this->cart->format_number($single_products->costo) ?> Tk</span></p>
-                        <div class="button"><span><a href="<?php echo 'single/'.$single_products->cod_specie;?>" class="details">Details</a></span></div>
+                        <div class="button"><span><a href="<?php echo 'single/'.$single_products->cod_specie;?>" style="background-color: #b1dfbb;border-radius: 10px" class="details">Dettagli</a></span></div>
                     </div>
                     <?php
                 }

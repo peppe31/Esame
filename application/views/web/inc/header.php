@@ -24,7 +24,7 @@
     <div class="wrap">
         <div class="header_top">
             <div class="logo">
-                <a href="web"><img style="width: 350px;height:180px" src="assets/web/images/immagini/logo.png" alt="" /></a>
+                <a href="/"><img style="width: 350px;height:180px" src="assets/web/images/immagini/logo.png" alt="" /></a>
             </div>
             <div class="header_top_right">
                 <div class="search_box">
@@ -35,7 +35,7 @@
                 </div>
                 <div class="shopping_cart">
                     <div class="cart">
-                        <a href="" title="View my shopping cart" rel="nofollow">
+                        <a href="./cart" title="View my shopping cart">
                             <span class="cart_title">Carrello</span>
                             <span class="no_product">(<?php echo $this->cart->total_items();?> Articoli)</span>
                         </a>
@@ -68,7 +68,7 @@
                 if ($this->uri->uri_string() == 'prodotti') {
                     echo "active";
                 }
-                ?>"><a href="./prodotti">Prodotti</a> </li>
+                ?>"><a href="./product">Prodotti</a> </li>
                     <?php if ($this->cart->total_items()) { ?>
                     <li class="<?php
                     if ($this->uri->uri_string() == 'cart') {
