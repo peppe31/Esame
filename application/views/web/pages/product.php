@@ -20,8 +20,8 @@
                         <a href="<?php echo 'single/'.$single_products->cod_specie ;?>"><img style="width:250px;height:250px" src="<?php echo $single_products->immagine ?>" alt="" /></a>
                         <h2><?php echo $single_products->nome ?></h2>
                         <p><?php echo $single_products->stagione ?></p>
-                        <p><span class="price"><?php echo $this->cart->format_number($single_products->costo) ?> Tk</span></p>
-                        <div class="button"><span><a href="<?php echo 'single/'.$single_products->cod_specie;?>" style="background-color: #b1dfbb;border-radius: 10px" class="details">Dettagli</a></span></div>
+                        <p><span class="price"><?php echo $this->cart->format_number($single_products->costo) ?> $</span></p>
+                        <div class="button"><span><a style="background-color: #b1dfbb;border-radius: 10px" href="<?php echo base_url('single/').$single_products->cod_specie;?>" style="background-color: #b1dfbb;border-radius: 10px" class="details">Dettagli</a></span></div>
                     </div>
                     <?php
                 }

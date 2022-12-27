@@ -51,7 +51,6 @@ body{
 }
 .search_box{
     float:left;
-    border: 1px solid #DBDBDB;
     position:relative;
     width:47%;
 }
@@ -62,7 +61,6 @@ body{
     border:none;
     background:none;
     font-size:14px;
-    color:#a5a5a5;
     font-family:Arial;
     outline:none;
     margin:0;
@@ -70,27 +68,15 @@ body{
 .search_box input[type="submit"]{
     border:none;
     cursor:pointer;
-    color:#FFF;
     font-size:12px;
     padding:10px 15px;
     height: 36px;
     margin:0;
-    background: -webkit-gradient(linear,left top,left bottom,from(#70389C),to(#602D8D));
-    background: -moz-linear-gradient(top,#70389C,#602D8D);
-    background: -o-linear-gradient(top,#70389C,#602D8D);
-    background: -ms-linear-gradient(top,#70389C,#602D8D);
-    -webkit-transition: all .9s;
-    -moz-transition: all .9s;
-    -o-transition: all .9s;
-    -ms-transition: all .9s;
-    transition: all .9s;
     position:absolute;
     right:0;
     top:0;
 }
-.search_box input[type="submit"]:hover{
-    background:#444;
-}
+
 .shopping_cart{
     float:left;
     width: 202px;
@@ -161,22 +147,20 @@ input[type="number"] {
     background: #70389C;
 }
 .login {
-    background: rgba(0, 0, 0, 0) url("../images/gradient_light-1.png") repeat-x scroll 0 0;
-    border: 1px solid #cecece;
     box-sizing: border-box;
     color: #444;
-    display: block;
+    display: flex;
     float: left;
     font-size: 27px;
     height: 38px;
     margin-left: 10px;
     text-align: center;
     width: 144px;
-}
-.login a {
-    color:#333;
-    padding: 0px 43px;
-    padding-bottom: 6px;
+	background-color: #00A300;
+	justify-content: center;
+	align-items: center;
+	border-radius: 20px
+;
 }
 /*** Login ***/
 .register_account h3,.login_panel h3{
@@ -269,11 +253,7 @@ p.note{
     padding:10px 15px;
     font-size:15px;
     font-weight:bold;
-    color             : #fff;
-    -webkit-box-shadow: 0 1px rgba(255,255,255,0.2) inset, 0 2px 2px -1px rgba(0,0,0,0.3);
-    -moz-box-shadow   : 0 1px rgba(255,255,255,0.2) inset, 0 2px 2px -1px rgba(0,0,0,0.3);
-    box-shadow        : 0 1px rgba(255,255,255,0.2) inset, 0 2px 2px -1px rgba(0,0,0,0.3);
-    -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;  
+   -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;
     cursor:pointer;   
 }
 .search button{
@@ -442,6 +422,7 @@ button.grey:hover,.search button.grey:hover{
 .section {
     clear: both;
     padding: 0px;
+	gap: 5px;
     margin: 0px;
 }
 .group:before,
@@ -602,7 +583,7 @@ button.grey:hover,.search button.grey:hover{
 }
 /**** Grid 1_0f_4 ****/
 .grid_1_of_4{
-    display: block;
+    display: flex;
     float:left;
     margin: 1% 0 1% 1.6%;
     box-shadow: 0px 0px 3px rgb(150, 150, 150);

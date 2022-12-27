@@ -3,6 +3,9 @@
 
 <div class="main">
     <div class="content">
+		<div style="display: flex;justify-content: center;align-items: center;margin-bottom: 5px">
+			<img style="width: 100%;height: 100%" src="assets/web/images/immagini/serra.png"/>
+		</div>
         <div class="content_top">
             <div class="heading">
                 <h3 style="color: #00A300">I nostri prodotti</h3>
@@ -19,7 +22,7 @@
                     <h2><?php echo $single_feature_product->nome; ?> </h2>
                     <p><?php echo $single_feature_product->stagione ?></p>
                     <p><span class="price"><?php echo $this->cart->format_number($single_feature_product->costo); ?> $</span></p>
-                    <div class="button"><span><a style="background-color: #b1dfbb;border-radius: 10px" href="<?php echo "/single/".$single_feature_product->cod_specie?>" class="details">Dettagli</a></span></div>
+                    <div class="button"><span><a style="background-color: #b1dfbb;border-radius: 10px" href="<?php echo base_url("single/".$single_feature_product->cod_specie);?>" class="details">Dettagli</a></span></div>
                 </div>
 
             <?php } ?> 

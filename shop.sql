@@ -304,10 +304,10 @@ INSERT INTO `tbl_slider` (`slider_id`, `slider_title`, `slider_image`, `slider_l
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user`
+-- Table structure for table `credenziali_cliente`(tbl_user)
 --
 
-CREATE TABLE `tbl_user` (
+CREATE TABLE `credenziali_cliente` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(255) NOT NULL,
   `user_email` varchar(255) NOT NULL,

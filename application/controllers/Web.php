@@ -73,11 +73,11 @@ class Web extends CI_Controller
         $product_id = $this->input->post('product_id');
         $results    = $this->web_model->get_product_by_id($product_id);
 
-        $data['id']      = $results->product_id;
-        $data['name']    = $results->product_title;
-        $data['price']   = $results->product_price;
+        $data['id']      = $results->cod_specie;
+        $data['name']    = $results->nome;
+        $data['price']   = $results->costo;
         $data['qty']     = $this->input->post('qty');
-        $data['options'] = array('product_image' => $results->product_image);
+        $data['options'] = $results->immagine;
 
         $this->cart->insert($data);
         redirect('cart');
