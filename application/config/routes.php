@@ -24,7 +24,7 @@ $route['customer/login']      = 'web/customer_login';
 $route['customer/logout']     = 'web/logout';
 $route['customer/logincheck'] = 'web/customer_logincheck';
 $route['customer/save']       = 'web/customer_save';
-$route['register/success']    = 'web/register_success';
+$route['success']    = 'web/register_success';
 
 $route['customer/shipping/login']    = 'web/customer_shipping_login';
 $route['customer/shipping/register'] = 'web/customer_shipping_register';

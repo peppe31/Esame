@@ -5,8 +5,8 @@ class Web_Model extends CI_Model
 
 	public function save_customer_info($data)
 	{
-		$this->db->insert('credenziali_cliente', $data);
-		return $this->db->insert_id();
+		$this->db->insert('cliente', $data);
+		return $data['piva'];
 	}
 
 
@@ -36,6 +36,12 @@ class Web_Model extends CI_Model
 		$this->db->where('specie_piantina.cod_specie', $id);
 		$info = $this->db->get();
 		return $info->row();
+	}
+
+	public function save_order_info($data)
+	{
+		$this->db->insert('ordine', $data);
+		return $data['piva'];
 	}
 
 }

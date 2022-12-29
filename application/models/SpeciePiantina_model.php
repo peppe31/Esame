@@ -55,6 +55,15 @@ class SpeciePiantina_model extends CI_Model
 		return $info->row();
 	}
 
+	public function get_specie_by_nome($nome)
+	{
+		$this->db->select('cod_specie');
+		$this->db->from('specie_piantina');
+		$this->db->where('specie_piantina.nome', $nome);
+		$info = $this->db->get();
+		return $info->row()->cod_specie;
+	}
+
 
 
 }

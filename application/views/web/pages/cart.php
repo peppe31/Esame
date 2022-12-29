@@ -77,14 +77,14 @@
                 </div>
                 <div class="shopright">
                     <?php
-                    $customer_id = $this->session->userdata('customer_id');
+                    $customer_id = $this->session->userdata('piva');
                     if (empty($customer_id)) {
                         ?>
                         <a href="<?php echo base_url('user_form') ?>"> <img src="<?php echo base_url() ?>assets/web/images/check.png" alt="" /></a>
                         <?php
                     } elseif (!empty($customer_id)) {
                         ?>
-                        <a href = "<?php echo base_url('customer/shipping') ?>"> <img src = "<?php echo base_url() ?>assets/web/images/check.png" alt = "" /></a>
+                        <a href = "<?php echo base_url('checkout') ?>"> <img src = "<?php echo base_url() ?>assets/web/images/check.png" alt = "" /></a>
                         <?php
                     }
                     ?>

@@ -11,49 +11,38 @@
             <div id="result">
                 <p><?php echo $this->session->flashdata('message'); ?></p>
             </div>
-            <form method="post" action="<?php echo base_url('customer/save/shipping/address');?>">
+            <form method="post" action="<?php echo base_url('customer/shipping/register');?>">
                 <table>
                     <tbody>
                         <tr>
                             <td>
-                                <div>
-                                    <input type="text" name="shipping_name" placeholder="Enter Your Name">
-                                </div>
-
-
-                                <div>
-                                    <input type="text" name="shipping_city" placeholder="Enter Your City">
-                                </div>
-                                <div>
-                                    <input type="text" name="shipping_phone" placeholder="Enter Your Phone">
-                                </div>
-                                <div>
-                                    <input type="text" name="shipping_zipcode" placeholder="Enter Your ZipCode">
-                                </div>
-                            </td>
-                            <td>
-                                <div>
-                                    <input type="text" name="shipping_email" placeholder="Enter Your Email">
-                                </div>
-                                        
-
-                                <div>
-                                    <input type="text" name="shipping_address" placeholder="Enter Your Address">
-                                </div>
-                                
-                                <div>
-                                    <select id="country" name="shipping_country" class="frm-field required">
-                                        <option value="null">Select a Country</option>         
-                                        <option value="Afghanistan">Afghanistan</option>
-                                        <option value="Bangladesh">Bangladesh</option>
-                                        <option value="Pakistan">Pakistan</option>
-                                        <option value="India">India</option>
-
-                                    </select>
-                                </div>		
-
-                                
-                            </td>
+								<div>
+									<input type="text" name="shipping_piva" placeholder="Partita IVA">
+								</div>
+								<div>
+									<input type="text" name="shipping_name" placeholder="Nome">
+								</div>
+								<div>
+									<input type="text" name="shipping_city" placeholder="Città">
+								</div>
+								<div>
+									<input type="text" name="shipping_civico" placeholder="Civico">
+								</div>
+							</td>
+							<td>
+								<div>
+									<input type="text" name="shipping_email" placeholder="E-mail">
+								</div>
+								<div>
+									<input type="text" name="shipping_cognome" placeholder="Cognome">
+								</div>
+								<div>
+									<input type="text" name="shipping_address" placeholder="Indirizzo">
+								</div>
+								<div>
+									<input type="text" name="shipping_zipcode" placeholder="CAP">
+								</div>
+							</td>
                         </tr> 
                     </tbody></table> 
                 <div class="search"><div><button class="grey">Create Account</button></div></div>

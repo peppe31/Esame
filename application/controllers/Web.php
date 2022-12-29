@@ -103,11 +103,7 @@ class Web extends CI_Controller
 
     public function register_success()
     {
-        $customer_name = $this->session->flashdata('customer_name');
-        if (!$customer_name) {
-            redirect('customer/register');
-        }
-        $data = array();
+
         $this->load->view('web/inc/header');
         $this->load->view('web/pages/register_success');
         $this->load->view('web/inc/footer');
@@ -149,14 +145,6 @@ class Web extends CI_Controller
         $data['customer_phone']    = $this->input->post('customer_phone');
         $data['customer_zipcode']  = $this->input->post('customer_zipcode');
 
-        $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[tbl_customer.customer_email]');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
-        $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
-        $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
-        $this->form_validation->set_rules('customer_country', 'Customer Country', 'trim|required');
-        $this->form_validation->set_rules('customer_phone', 'Customer Phone', 'trim|required');
-        $this->form_validation->set_rules('customer_zipcode', 'Customer Zipcode', 'trim|required');
 
         if ($this->form_validation->run() == true) {
             $result = $this->web_model->save_customer_info($data);
@@ -177,17 +165,17 @@ class Web extends CI_Controller
     public function customer_logincheck()
     {
         $data                      = array();
-        $data['customer_email']    = $this->input->post('customer_email');
-        $data['customer_password'] = md5($this->input->post('customer_password'));
+        $data['cliente_mail']    = $this->input->post('customer_email');
+        $data['cliente_password'] = md5($this->input->post('customer_password'));
 
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
+        $this->form_validation->set_rules('cliente_mail', 'Customer Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('cliente_password', 'Customer Password', 'trim|required');
 
         if ($this->form_validation->run() == true) {
             $result = $this->web_model->get_customer_info($data);
             if ($result) {
-                $this->session->set_userdata('customer_id', $result->customer_id);
-                $this->session->set_userdata('customer_email', $data['customer_email']);
+                $this->session->set_userdata('customer_id', $result->cliente_piva);
+                $this->session->set_userdata('customer_email', $data['cliente_mail']);
                 redirect('/');
             } else {
                 $this->session->set_flashdata('message', 'Customer Login Fail');
@@ -202,63 +190,38 @@ class Web extends CI_Controller
     public function customer_shipping_login()
     {
         $data                      = array();
-        $data['customer_email']    = $this->input->post('customer_email');
-        $data['customer_password'] = md5($this->input->post('customer_password'));
+        $data['cliente_mail']    = $this->input->post('customer_email');
+        $data['cliente_password'] =$this->input->post('customer_password');
 
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
-
-        if ($this->form_validation->run() == true) {
             $result = $this->web_model->get_customer_info($data);
             if ($result) {
-                $this->session->set_userdata('customer_id', $result->customer_id);
-                $this->session->set_userdata('customer_email', $result->customer_email);
+                $this->session->set_userdata('customer_id', $result->cliente_piva);
+                $this->session->set_userdata('customer_email', $result->cliente_mail);
                 redirect('customer/shipping');
             } else {
                 $this->session->set_flashdata('messagelogin', 'Customer Login Fail');
                 redirect('user_form');
             }
-        } else {
-            $this->session->set_flashdata('messagelogin', validation_errors());
-            redirect('user_form');
-        }
     }
 
     public function customer_shipping_register()
     {
         $data                      = array();
-        $data['customer_name']     = $this->input->post('customer_name');
-        $data['customer_email']    = $this->input->post('customer_email');
-        $data['customer_password'] = md5($this->input->post('customer_password'));
-        $data['customer_address']  = $this->input->post('customer_address');
-        $data['customer_city']     = $this->input->post('customer_city');
-        $data['customer_country']  = $this->input->post('customer_country');
-        $data['customer_phone']    = $this->input->post('customer_phone');
-        $data['customer_zipcode']  = $this->input->post('customer_zipcode');
+        $data['piva']     = $this->input->post('shipping_piva');
+        $data['mail']    = $this->input->post('shipping_email');
+        $data['nome'] = $this->input->post('shipping_name');
+        $data['cognome']  = $this->input->post('shipping_cognome');
+        $data['citta']     = $this->input->post('shipping_city');
+        $data['via']  = $this->input->post('shipping_address');
+        $data['civico']    = $this->input->post('shipping_civico');
+        $data['cap']  = $this->input->post('shipping_zipcode');
 
-        $this->form_validation->set_rules('customer_name', 'Customer Name', 'trim|required');
-        $this->form_validation->set_rules('customer_email', 'Customer Email', 'trim|required|valid_email|is_unique[tbl_customer.customer_email]');
-        $this->form_validation->set_rules('customer_password', 'Customer Password', 'trim|required');
-        $this->form_validation->set_rules('customer_address', 'Customer Address', 'trim|required');
-        $this->form_validation->set_rules('customer_city', 'Customer City', 'trim|required');
-        $this->form_validation->set_rules('customer_country', 'Customer Country', 'trim|required');
-        $this->form_validation->set_rules('customer_phone', 'Customer Phone', 'trim|required');
-        $this->form_validation->set_rules('customer_zipcode', 'Customer Zipcode', 'trim|required');
-
-        if ($this->form_validation->run() == true) {
             $result = $this->web_model->save_customer_info($data);
 
-            if ($result) {
-                $this->session->set_userdata('customer_id', $result);
-                redirect('customer/shipping');
-            } else {
-                $this->session->set_flashdata('message', 'Customer Shipping Fail');
-                redirect('user_form');
-            }
-        } else {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect('user_form');
-        }
+			$this->session->set_userdata('piva', $result);
+			redirect('/success');
+
+
     }
 
     public function customer_shipping()
@@ -281,39 +244,27 @@ class Web extends CI_Controller
 
     public function save_order()
     {
+		$odata                = array();
+		$odata['piva'] = $this->session->userdata('piva');
+		$odata['data'] = date_create()->format("Y/m/d");
+		$odata['ora'] = time();
+		$odata['costo_totale'] =$this->cart->total();
 
-        if ($this->form_validation->run() == true) {
-            $odata                = array();
-            $odata['customer_id'] = $this->session->userdata('customer_id');
-            $odata['shipping_id'] = $this->session->userdata('shipping_id');
-            $tax                  = ($this->cart->total() * 15) / 100;
-            $odata['order_total'] = $tax + $this->cart->total();
+		$myoddata = $this->cart->contents();
 
-            $order_id = $this->web_model->save_order_info($odata);
+		foreach ($myoddata as $oddatas) {
 
-            $oddata = array();
+			$nome         = $oddatas['name'];
+			$odata['cod_specie']=$this->speciePiantina_model->get_specie_by_nome($nome);
+			$odata['quantita'] = $oddatas['qty'];
+			$this->web_model->save_order_info($odata);
+		}
 
-            $myoddata = $this->cart->contents();
 
-            foreach ($myoddata as $oddatas) {
+		$this->cart->destroy();
 
-                $oddata['order_id']               = $order_id;
-                $oddata['product_id']             = $oddatas['id'];
-                $oddata['product_name']           = $oddatas['name'];
-                $oddata['product_price']          = $oddatas['price'];
-                $oddata['product_sales_quantity'] = $oddatas['qty'];
-                $oddata['product_image']          = $oddatas['options']['product_image'];
-                $this->web_model->save_order_details_info($oddata);
-            }
-
-            $this->cart->destroy();
-
-            redirect('payment');
-        } else {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect('checkout');
-        }
-    }
+		redirect('payment');
+	}
 
 
     public function search()
@@ -344,5 +295,12 @@ class Web extends CI_Controller
         $this->session->unset_userdata('customer_email');
         redirect('customer/login');
     }
+
+	public function payment()
+	{
+		$this->load->view('web/inc/header');
+		$this->load->view('web/pages/payment');
+		$this->load->view('web/inc/footer');
+	}
 
 }
