@@ -166,12 +166,9 @@ class Web extends CI_Controller
     {
         $data                      = array();
         $data['cliente_mail']    = $this->input->post('customer_email');
-        $data['cliente_password'] = md5($this->input->post('customer_password'));
+        $data['cliente_password'] = $this->input->post('customer_password');
 
-        $this->form_validation->set_rules('cliente_mail', 'Customer Email', 'trim|required|valid_email');
-        $this->form_validation->set_rules('cliente_password', 'Customer Password', 'trim|required');
 
-        if ($this->form_validation->run() == true) {
             $result = $this->web_model->get_customer_info($data);
             if ($result) {
                 $this->session->set_userdata('customer_id', $result->cliente_piva);
@@ -181,10 +178,8 @@ class Web extends CI_Controller
                 $this->session->set_flashdata('message', 'Customer Login Fail');
                 redirect('customer/login');
             }
-        } else {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect('customer/login');
-        }
+
+
     }
 
     public function customer_shipping_login()
@@ -216,9 +211,19 @@ class Web extends CI_Controller
         $data['civico']    = $this->input->post('shipping_civico');
         $data['cap']  = $this->input->post('shipping_zipcode');
 
-            $result = $this->web_model->save_customer_info($data);
 
-			$this->session->set_userdata('piva', $result);
+		$this->session->set_flashdata('customer_name', $data['nome']);
+
+		$result = $this->web_model->save_customer_info($data);
+
+		$credenziali=array();
+		$credenziali['cliente_piva'] = $this->input->post('shipping_piva');
+		$credenziali['cliente_mail'] = $this->input->post('shipping_email');
+		$credenziali['cliente_password'] = $this->input->post('password');
+
+		$result = $this->web_model->save_credenziali($credenziali);
+
+		$this->session->set_userdata('piva', $result);
 			redirect('/success');
 
 
@@ -245,7 +250,7 @@ class Web extends CI_Controller
     public function save_order()
     {
 		$odata                = array();
-		$odata['piva'] = $this->session->userdata('piva');
+		$odata['piva'] = $this->session->userdata('customer_id');
 		$odata['data'] = date_create()->format("Y/m/d");
 		$odata['ora'] = time();
 		$odata['costo_totale'] =$this->cart->total();

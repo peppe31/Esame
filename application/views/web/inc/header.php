@@ -35,10 +35,10 @@
                 $customer_id = $this->session->userdata('customer_id');
                 if ($customer_id) {
                     ?>
-                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="">Logout</a></div>
+                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="<?php echo base_url('customer/logout')?>">Logout</a></div>
                 <?php } else {
                     ?>
-                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="">Login</a></div>
+                    <div style="display:flex;align-items:center;justify-content:center;background-color: #00A300;border-radius: 20px" class="login"><a href="<?php echo base_url('customer/login')?>">Login</a></div>
 
                     <?php
                 }
@@ -78,12 +78,12 @@
                 if ($this->uri->uri_string() == 'customer/login') {
                     echo "active";
                 }
-                ?>"><a href="">Login</a> </li>
+                ?>"><a href="<?php echo base_url('customer/login')?>">Login</a> </li>
                 <li class="<?php
                 if ($this->uri->uri_string() == 'customer/register') {
                     echo "active";
                 }
-                ?>"><a href="">Registrati</a> </li>
+                ?>"><a href="<?php echo base_url('customer/register')?>">Registrati</a> </li>
                 
                 <?php }?>
                 

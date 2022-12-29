@@ -9,12 +9,20 @@ class Web_Model extends CI_Model
 		return $data['piva'];
 	}
 
+	public function save_credenziali($data)
+	{
+		$this->db->insert('credenziali_cliente', $data);
+		return $data['piva'];
+	}
+
 
 	public function get_customer_info($data)
 	{
-		$this->db->select('*');
+		$this->db->select('cliente_piva');
 		$this->db->from('credenziali_cliente');
-		$this->db->where($data);
+		$this->db->where('cliente_mail',$data['cliente_mail']);
+		$this->db->where('cliente_password',$data['cliente_password']);
+
 		$info = $this->db->get();
 		return $info->row();
 	}

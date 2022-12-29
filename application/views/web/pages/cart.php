@@ -77,7 +77,7 @@
                 </div>
                 <div class="shopright">
                     <?php
-                    $customer_id = $this->session->userdata('piva');
+                    $customer_id = $this->session->userdata('customer_id');
                     if (empty($customer_id)) {
                         ?>
                         <a href="<?php echo base_url('user_form') ?>"> <img src="<?php echo base_url() ?>assets/web/images/check.png" alt="" /></a>
