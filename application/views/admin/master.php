@@ -4,7 +4,7 @@
 
         <!-- start: Meta -->
         <meta charset="utf-8">
-        <title>Shop Admin Panel Dashboard</title>
+        <title>Plyplant Admin Panel Dashboard</title>
         <meta name="description" content="Shop Admin Panel Dashboard">
         <meta name="author" content="Engr Rostom Ali">
         <meta name="keyword" content="Shop Admin Panel Dashboard">
@@ -52,7 +52,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="<?php echo base_url('dashboard')?>"><span>E-Shop Admin Panel</span></a>
+                    <a class="brand" href="<?php echo base_url('dashboard')?>"><span>Polyplant Admin Panel</span></a>
 
                     <!-- start: Header Menu -->
                     <div class="nav-no-collapse header-nav">
@@ -65,9 +65,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li class="dropdown-menu-title">
-                                        <span>Account Settings</span>
+                                        <span>Impostazioni account</span>
                                     </li>
-                                    <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
+                                    <li><a href="<?php echo base_url('profile')?>"><i class="halflings-icon user"></i> Profilo</a></li>
                                     <li><a href="<?php echo base_url('logout')?>"><i class="halflings-icon off"></i> Logout</a></li>
                                 </ul>
                             </li>
@@ -89,17 +89,13 @@
                     <div class="nav-collapse sidebar-nav">
                         <ul class="nav nav-tabs nav-stacked main-menu">
                             <li><a href="<?php echo base_url('dashboard')?>"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
-                            <li><a href="<?php echo base_url('add/category')?>"><i class="icon-envelope"></i><span class="hidden-tablet"> Add Category</span></a></li>
-                            <li><a href="<?php echo base_url('manage/category')?>"><i class="icon-tasks"></i><span class="hidden-tablet"> Manage Category</span></a></li>
-                            <li><a href="<?php echo base_url('add/brand')?>"><i class="icon-edit"></i><span class="hidden-tablet"> Add Brand</span></a></li>
-                            <li><a href="<?php echo base_url('manage/brand')?>"><i class="icon-list-alt"></i><span class="hidden-tablet"> Manage Brand</span></a></li>
-                            <li><a href="<?php echo base_url('add/product')?>"><i class="icon-eye-open"></i><span class="hidden-tablet"> Add Product</span></a></li>
-                            <li><a href="<?php echo base_url('manage/product')?>"><i class="icon-dashboard"></i><span class="hidden-tablet"> Manage Product</span></a></li>
-                          
-                            <li><a href="<?php echo base_url('add/slider')?>"><i class="icon-font"></i><span class="hidden-tablet"> Add Slider</span></a></li>
-                            <li><a href="<?php echo base_url('manage/slider')?>"><i class="icon-picture"></i><span class="hidden-tablet"> Manage Slider</span></a></li>
-                            <li><a href="<?php echo base_url('theme/option');?>"><i class="icon-align-justify"></i><span class="hidden-tablet"> Theme Option</span></a></li>
-                            <li><a href="<?php echo base_url('manage/order');?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Manage Order</span></a></li>
+                            <?php if ($this->session->userdata('tipo')==true){?>
+							<li><a href="<?php echo base_url('add/brand')?>"><i class="icon-edit"></i><span class="hidden-tablet"> Aggiungi serra</span></a></li>
+                            <li><a href="<?php echo base_url('manage/brand')?>"><i class="icon-list-alt"></i><span class="hidden-tablet"> Gestisci serre</span></a></li>
+                            <?php }?>
+                            <li><a href="<?php echo base_url('add/product')?>"><i class="icon-eye-open"></i><span class="hidden-tablet"> Aggiungi prodotto</span></a></li>
+                            <li><a href="<?php echo base_url('manage/product')?>"><i class="icon-dashboard"></i><span class="hidden-tablet"> Gestisci prodotti</span></a></li>
+                            <li><a href="<?php echo base_url('manage/order');?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Gestisci ordini</span></a></li>
                         </ul>
                     </div>
                 </div>

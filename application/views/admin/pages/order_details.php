@@ -89,7 +89,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $single_order_details->nome ?></td>
-                                <td><img src="<?php echo base_url($single_order_details->immagine);?>" style="width:200px;height:100px"/></td>
+                                <td><img src="<?php echo base_url('uploads'.$single_order_details->immagine);?>" style="width:200px;height:100px"/></td>
                                 <td><?php echo $this->cart->format_number($single_order_details->costo)?> $</td>
                                 <td><?php echo $single_order_details->quantita ?></td>
                                 <td><?php echo $this->cart->format_number($single_order_details->costo * $single_order_details->quantita) ?> $</td>

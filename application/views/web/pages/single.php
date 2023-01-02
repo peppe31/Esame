@@ -5,7 +5,7 @@
         <div class="section group" style="display: flex;justify-content: center;align-items: center">
             <div class="cont-desc span_1_of_2">				
                 <div class="grid images_3_of_2">
-                    <img src="<?php echo base_url($prodotto->immagine);?>" alt="" />
+                    <img src="<?php echo base_url('uploads/'.$prodotto->immagine);?>" alt="" />
                 </div>
                 <div class="desc span_3_of_2">
                     <h2><?php echo $prodotto->nome?></h2>

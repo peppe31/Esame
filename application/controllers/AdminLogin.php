@@ -26,8 +26,10 @@ class AdminLogin extends CI_Controller
 
             if ($result) {
                 $this->session->set_userdata('user_email', $result->mail);
-                $this->session->set_userdata('user_name', $result->password);
-                $this->session->set_userdata('user_id', $result->cod_impiegato);
+                $this->session->set_userdata('user_name', $result->nome);
+				$this->session->set_userdata('cognome', $result->cognome);
+				$this->session->set_userdata('cod_impiegato', $result->cod_impiegato);
+				$this->session->set_userdata('tipo', $result->tipo);
                 redirect('dashboard');
             } else {
                 $this->session->set_flashdata('message', 'Your Email Or Password Does Not Match');

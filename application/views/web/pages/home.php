@@ -18,7 +18,7 @@
             foreach ($prodotti as $single_feature_product) {
                 ?>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href=""><img style="width:200px;height:200px" src="<?php echo $single_feature_product->immagine; ?> " alt="" /></a>
+                    <a href=""><img style="width:200px;height:200px" src="<?php echo base_url('uploads/'.$single_feature_product->immagine); ?> " alt="" /></a>
                     <h2><?php echo $single_feature_product->nome; ?> </h2>
                     <p><?php echo $single_feature_product->stagione ?></p>
                     <p><span class="price"><?php echo $this->cart->format_number($single_feature_product->costo); ?> $</span></p>

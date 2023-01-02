@@ -21,7 +21,7 @@ class Brand extends CI_Controller
     public function manage_brand()
     {
         $data                = array();
-        $data['all_brand']   = $this->brand_model->getall_brand_info();
+        $data['all_brand']   = $this->serra_model->getall_serra();
         $data['maincontent'] = $this->load->view('admin/pages/manage_brand', $data, true);
         $this->load->view('admin/master', $data);
     }
@@ -29,33 +29,23 @@ class Brand extends CI_Controller
     public function save_brand()
     {
         $data                       = array();
-        $data['brand_name']         = $this->input->post('brand_name');
-        $data['brand_description']  = $this->input->post('brand_description');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['cod_serra']         = $this->input->post('codice');
+        $data['capienza']  = $this->input->post('capienza');
 
-        $this->form_validation->set_rules('brand_name', 'Brand Name', 'trim|required');
-        $this->form_validation->set_rules('brand_description', 'Brand Description', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
-
-        if ($this->form_validation->run() == true) {
-            $result = $this->brand_model->save_brand_info($data);
+            $result = $this->serra_model->save_serra($data);
             if ($result) {
-                $this->session->set_flashdata('message', 'Brand Inseted Sucessfully');
+                $this->session->set_flashdata('message', 'Serra aggiunta correttamente');
                 redirect('manage/brand');
             } else {
-                $this->session->set_flashdata('message', 'Brand Inserted Failed');
+                $this->session->set_flashdata('message', 'Inserimento serra fallito');
                 redirect('manage/brand');
             }
-        } else {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect('add/brand');
-        }
 
     }
 
     public function delete_brand($id)
     {
-        $result = $this->brand_model->delete_brand_info($id);
+        $result = $this->serra_model->delete_serra_info($id);
         if ($result) {
             $this->session->set_flashdata('message', 'Brand Deleted Sucessfully');
             redirect('manage/brand');
@@ -68,7 +58,7 @@ class Brand extends CI_Controller
     public function edit_brand($id)
     {
         $data                     = array();
-        $data['brand_info_by_id'] = $this->brand_model->edit_brand_info($id);
+        $data['brand_info_by_id'] = $this->serra_model->edit_serra_info($id);
         $data['maincontent']      = $this->load->view('admin/pages/edit_brand', $data, true);
         $this->load->view('admin/master', $data);
     }
@@ -76,33 +66,23 @@ class Brand extends CI_Controller
     public function update_brand($id)
     {
         $data                       = array();
-        $data['brand_name']         = $this->input->post('brand_name');
-        $data['brand_description']  = $this->input->post('brand_description');
-        $data['publication_status'] = $this->input->post('publication_status');
+        $data['cod_serra']         = $this->input->post('codice');
+        $data['capienza']  = $this->input->post('capienza');
 
-        $this->form_validation->set_rules('brand_name', 'Brand Name', 'trim|required');
-        $this->form_validation->set_rules('brand_description', 'Brand Description', 'trim|required');
-        $this->form_validation->set_rules('publication_status', 'Publication Status', 'trim|required');
-
-        if ($this->form_validation->run() == true) {
-            $result = $this->brand_model->update_brand_info($data, $id);
+ 		$result = $this->serra_model->update_serra_info($data, $id);
             if ($result) {
-                $this->session->set_flashdata('message', 'Brand Update Sucessfully');
+                $this->session->set_flashdata('message', 'Aggiornamento serra completato');
                 redirect('manage/brand');
             } else {
-                $this->session->set_flashdata('message', 'Brand Update Failed');
+                $this->session->set_flashdata('message', 'Aggiornamento serra fallito');
                 redirect('manage/brand');
             }
-        } else {
-            $this->session->set_flashdata('message', validation_errors());
-            redirect('add/brand');
-        }
 
     }
 
     public function published_brand($id)
     {
-        $result = $this->brand_model->published_brand_info($id);
+        $result = $this->serra_model->published_brand_info($id);
         if ($result) {
             $this->session->set_flashdata('message', 'Published Brand Sucessfully');
             redirect('manage/brand');
@@ -114,7 +94,7 @@ class Brand extends CI_Controller
 
     public function unpublished_brand($id)
     {
-        $result = $this->brand_model->unpublished_brand_info($id);
+        $result = $this->serra_model->unpublished_brand_info($id);
         if ($result) {
             $this->session->set_flashdata('message', 'UnPublished Brand Sucessfully');
             redirect('manage/brand');

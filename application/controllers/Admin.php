@@ -16,6 +16,19 @@ class Admin extends CI_Controller
         $data['maincontent'] = $this->load->view('admin/pages/home', '', true);
         $this->load->view('admin/master', $data);
     }
+	public function profile()
+	{
+		$data                = array();
+		$data['cod_impiegato']=$this->session->userdata('cod_impiegato');
+		$data['user_email']=$this->session->userdata('user_email');
+		$data['user_name']=$this->session->userdata('user_name');
+		$data['cognome']=$this->session->userdata('cognome');
+		$data['tipo']=$this->session->userdata('tipo');
+
+
+		$data['maincontent'] = $this->load->view('admin/pages/profile', '', true);
+		$this->load->view('admin/master', $data);
+	}
 
     public function get_user()
     {

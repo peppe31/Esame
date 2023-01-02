@@ -77,6 +77,7 @@ $route['unpublished/product/(:num)'] = 'product/unpublished_product/$1';
 $route['admin']             = 'adminlogin';
 $route['admin_login_check'] = 'adminlogin/admin_login_check';
 $route['logout']            = 'admin/logout';
+$route['profile']            = 'admin/profile';
 
 //Slider  Route List
 $route['add/slider']                = 'slider/add_slider';

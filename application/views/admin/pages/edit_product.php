@@ -10,14 +10,14 @@
         </li>
         <li>
             <i class="icon-edit"></i>
-            <a href="<?php echo base_url('edit/product/'.$product_info_by_id->product_id)?>">edit Product</a>
+            <a href="<?php echo base_url('edit/product/'.$product_info_by_id->cod_specie)?>">Modifica prodotto</a>
         </li>
     </ul>
 
     <div class="row-fluid sortable">
         <div class="box span12">
             <div class="box-header" data-original-title>
-                <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Product</h2>
+                <h2><i class="halflings-icon edit"></i><span class="break"></span>Modifica prodotto</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -32,102 +32,61 @@
                 <p><?php echo $this->session->flashdata('message');?></p>
             </div>
             <div class="box-content">
-                <form name="formName" class="form-horizontal" action="<?php echo base_url('update/product/'.$product_info_by_id->product_id);?>" method="post" enctype="multipart/form-data">
+                <form name="formName" class="form-horizontal" action="<?php echo base_url('update/product/'.$product_info_by_id->cod_specie);?>" method="post" enctype="multipart/form-data">
                     <fieldset>
 
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Title</label>
+						<div class="control-group">
+							<label class="control-label" for="fileInput">Codice prodotto</label>
+							<div class="controls">
+								<input class="span6 typeahead" value="<?php echo $product_info_by_id->cod_specie;?>" name="product_codice" id="fileInput" type="text"/>
+							</div>
+						</div>
+						<div class="control-group">
+                            <label class="control-label" for="fileInput">Nome prodotto</label>
                             <div class="controls">
-                                <input class="span6 typeahead" value="<?php echo $product_info_by_id->product_title;?>" name="product_title" id="fileInput" type="text"/>
+                                <input class="span6 typeahead" value="<?php echo $product_info_by_id->nome;?>" name="product_title" id="fileInput" type="text"/>
                             </div>
                         </div>          
                         <div class="control-group">
-                            <label class="control-label" for="textarea2">Product Short Description</label>
+                            <label class="control-label" for="textarea2">Stagione</label>
                             <div class="controls">
-                                <textarea class="cleditor" name="product_short_description" id="textarea2" rows="2">
-                                    <?php echo $product_info_by_id->product_short_description;?>
+                                <textarea class="cleditor" name="stagione" id="textarea2" rows="2">
+                                    <?php echo $product_info_by_id->stagione;?>
                                 </textarea>
                             </div>
                         </div>        
                         <div class="control-group">
-                            <label class="control-label" for="textarea2">Product Long Description</label>
+                            <label class="control-label" for="textarea2">Tempario</label>
                             <div class="controls">
-                                <textarea class="cleditor" name="product_long_description" id="textarea2" rows="4">
-                                    <?php echo $product_info_by_id->product_long_description;?>
+                                <textarea class="cleditor" name="tempario" id="textarea2" rows="4">
+                                    <?php echo $product_info_by_id->tempario;?>
                                 </textarea>
                             </div>
                         </div>
                         <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Image</label>
+                            <label class="control-label" for="fileInput">Immagine</label>
                             <div class="controls">
                                 <input class="span6 typeahead" name="product_image" id="fileInput" type="file"/>
-                                <input class="span6 typeahead" name="product_delete_image" value="<?php echo base_url('uploads/'.$product_info_by_id->product_image);?>" type="hidden"/>
+                                <input class="span6 typeahead" name="product_delete_image" value="<?php echo base_url($product_info_by_id->immagine);?>" type="hidden"/>
                             </div>
                         </div>
                         
                         <div class="control-group">
                             <div class="controls">
-                                <img src="<?php echo base_url('uploads/'.$product_info_by_id->product_image);?>" style="width:500px;height:200px"/>
+                                <img src="<?php echo base_url($product_info_by_id->immagine);?>" style="width:500px;height:200px"/>
                             </div>
                         </div> 
                         
                         <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Price</label>
+                            <label class="control-label" for="fileInput">Costo</label>
                             <div class="controls">
-                                <input class="span6 typeahead" value="<?php echo $product_info_by_id->product_price;?>" name="product_price" id="fileInput" type="text"/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Quantity</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="<?php echo $product_info_by_id->product_quantity;?>" name="product_quantity" id="fileInput" type="text"/>
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Category</label>
-                            <div class="controls">
-                                <select id="product_category" name="product_category">
-                                    <?php foreach($all_published_category as $single_category){?>
-                                    <option value="<?php echo $single_category->id;?>"><?php echo $single_category->category_name;?></option>
-                                    <?php }?>
-                                </select>
-                            </div>
-                        </div> 
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Brand</label>
-                            <div class="controls">
-                                <select id="product_brand" name="product_brand">
-                                    <?php foreach($all_published_brand as $single_brand){?>
-                                    <option value="<?php echo $single_brand->brand_id;?>"><?php echo $single_brand->brand_name;?></option>
-                                    <?php }?>
-                                </select>
-                            </div>
-                        </div> 
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="fileInput">Product Featured</label>
-                            <div class="controls">
-                                <input class="span6 typeahead" value="0" name="product_feature" id="fileInput" type="radio"/> Unfeatured
-                                <input class="span6 typeahead" value="1" name="product_feature" id="fileInput" type="radio" />Featured
-                            </div>
-                        </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="textarea2">Publication Status</label>
-                            <div class="controls">
-                                <select id="publication_status" name="publication_status">
-                                    <option value="1">Published</option>
-                                    <option value="0">UnPublished</option>
-                                </select>
+                                <input class="span6 typeahead" value="<?php echo $product_info_by_id->costo;?>" name="product_price" id="fileInput" type="text"/>
                             </div>
                         </div>
                         
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                            <button type="reset" class="btn">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Salva modifiche</button>
+                            <button type="reset" class="btn">Cancella</button>
                         </div>
                     </fieldset>
                 </form>   
@@ -141,10 +100,3 @@
 </div><!--/.fluid-container-->
 
 <!-- end: Content -->
-
-<script>
-document.getElementById('publication_status').value = <?php echo $product_info_by_id->pstatus;?>;
-document.formName.product_feature.value=<?php echo $product_info_by_id->product_feature;?>;
-document.getElementById('product_brand').value = <?php echo $product_info_by_id->product_brand;?>;
-document.getElementById('product_category').value = <?php echo $product_info_by_id->product_category;?>;
-</script>

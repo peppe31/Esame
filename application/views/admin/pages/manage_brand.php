@@ -8,13 +8,13 @@
             <a href="<?php echo base_url('dashboard')?>">Home</a> 
             <i class="icon-angle-right"></i>
         </li>
-        <li><a href="<?php echo base_url('manage/brand')?>">Manage Brand</a></li>
+        <li><a href="<?php echo base_url('manage/brand')?>">Gestisci serre</a></li>
     </ul>
 
     <div class="row-fluid sortable">		
         <div class="box span12">
             <div class="box-header" data-original-title>
-                <h2><i class="halflings-icon user"></i><span class="break"></span>Manage Brand</h2>
+                <h2><i class="halflings-icon user"></i><span class="break"></span>Gestisci serre</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -34,11 +34,10 @@
                 <table class="table table-striped table-bordered bootstrap-datatable datatable">
                     <thead>
                         <tr>
-                            <th>Sr.</th>
-                            <th>Brand Name</th>
-                            <th>Brand Description</th>
-                            <th>Publication Status</th>
-                            <th>Actions</th>
+                            <th>#</th>
+                            <th>Codice serra</th>
+                            <th>Capienza</th>
+                            <th>Azioni</th>
                         </tr>
                     </thead>   
                     <tbody>
@@ -49,34 +48,13 @@
                         ?>
                         <tr>
                             <td><?php echo $i;?></td>
-                            <td class="center"><?php echo $single_brand->brand_name;?></td>
-                            <td class="center"><?php echo $single_brand->brand_description;?></td>
-                            <td class="center">
-                                    <?php if ($single_brand->publication_status == 1) { ?>
-                                        <span class="label label-success">Published</span>
-                                    <?php } else {
-                                        ?>
-                                        <span class="label label-danger" style="background:red">Unpublished</span>
-                                        <?php }
-                                    ?>
-                                </td>
+                            <td class="center"><?php echo $single_brand->cod_serra;?></td>
+                            <td class="center"><?php echo $single_brand->capienza;?></td>
                                 <td class="center">
-                                    <?php if ($single_brand->publication_status == 0) { ?>
-                                        <a class="btn btn-success" href="<?php echo base_url('published/brand/' . $single_brand->brand_id); ?>">
-                                            <i class="halflings-icon white thumbs-up"></i>  
-                                        </a>
-                                    <?php } else {
-                                        ?>
-                                        <a class="btn btn-danger" href="<?php echo base_url('unpublished/brand/' . $single_brand->brand_id); ?>">
-                                            <i class="halflings-icon white thumbs-down"></i>  
-                                        </a>
-                                        <?php }
-                                    ?>
-
-                                    <a class="btn btn-info" href="<?php echo base_url('edit/brand/' . $single_brand->brand_id); ?>">
+                                    <a class="btn btn-info" href="<?php echo base_url('edit/brand/' . $single_brand->cod_serra); ?>">
                                         <i class="halflings-icon white edit"></i>  
                                     </a>
-                                    <a class="btn btn-danger" href="<?php echo base_url('delete/brand/' . $single_brand->brand_id); ?>">
+                                    <a class="btn btn-danger" href="<?php echo base_url('delete/brand/' . $single_brand->cod_serra); ?>">
                                         <i class="halflings-icon white trash"></i> 
                                     </a>
                                 </td>

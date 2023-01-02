@@ -10,14 +10,14 @@
         </li>
         <li>
             <i class="icon-edit"></i>
-            <a href="<?php echo base_url('add/brand')?>">Add Brand</a>
+            <a href="<?php echo base_url('add/brand')?>">Aggiungi serra</a>
         </li>
     </ul>
 
     <div class="row-fluid sortable">
         <div class="box span12">
             <div class="box-header" data-original-title>
-                <h2><i class="halflings-icon edit"></i><span class="break"></span>Add Brand</h2>
+                <h2><i class="halflings-icon edit"></i><span class="break"></span>Aggiungi serra</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -36,31 +36,21 @@
                     <fieldset>
 
                         <div class="control-group">
-                            <label class="control-label" for="fileInput">Brand Name</label>
+                            <label class="control-label" for="fileInput">Codice serra</label>
                             <div class="controls">
-                                <input class="span6 typeahead" name="brand_name" id="fileInput" type="text"/>
+                                <input class="span6 typeahead" name="codice" id="fileInput" type="text"/>
                             </div>
                         </div>          
                         <div class="control-group">
-                            <label class="control-label" for="textarea2">Brand Description</label>
+                            <label class="control-label" for="textarea2">Capienza</label>
                             <div class="controls">
-                                <textarea class="cleditor" id="textarea2" name="brand_description" rows="3"></textarea>
+                                <textarea class="cleditor" id="textarea2" name="capienza" rows="3"></textarea>
                             </div>
                         </div>
-                        
-                        <div class="control-group">
-                            <label class="control-label" for="textarea2">Publication Status</label>
-                            <div class="controls">
-                                <select name="publication_status">
-                                    <option value="1">Published</option>
-                                    <option value="0">UnPublished</option>
-                                </select>
-                            </div>
-                        </div>
-                        
+
                         <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                            <button type="reset" class="btn">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Aggiungi serra</button>
+                            <button type="reset" class="btn">Annulla</button>
                         </div>
                     </fieldset>
                 </form>   

@@ -64,7 +64,7 @@
                     if ($this->uri->uri_string() == 'cart') {
                         echo "active";
                     }
-                    ?>"><a href="">Carrello</a></li>
+                    ?>"><a href="<?php echo base_url("/cart");?>">Carrello</a></li>
                     <?php } ?>
                 <li class="<?php
                 if ($this->uri->uri_string() == 'contact') {
@@ -75,10 +75,10 @@
                 <?php if(!$this->session->userdata('customer_id')){?>
                 
                 <li class="<?php
-                if ($this->uri->uri_string() == 'customer/login') {
+                if ($this->uri->uri_string() == 'admin') {
                     echo "active";
                 }
-                ?>"><a href="<?php echo base_url('customer/login')?>">Login</a> </li>
+                ?>"><a href="<?php echo base_url('admin')?>">Admin</a> </li>
                 <li class="<?php
                 if ($this->uri->uri_string() == 'customer/register') {
                     echo "active";

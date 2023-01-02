@@ -24,7 +24,7 @@
                             <tr>
                                 <td><?php echo $i; ?></td>
                                 <td><?php echo $cart_items['name'] ?></td>
-                                <td><img src="<?php echo $cart_items['options'] ?>" alt=""/></td>
+                                <td><img style="width: 50px;height: 45px" src="<?php echo base_url('uploads/'.$cart_items['options']); ?>" alt=""/></td>
                                 <td>$ <?php echo $this->cart->format_number($cart_items['price']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('update/cart'); ?>" method="post">
