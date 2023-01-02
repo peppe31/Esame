@@ -40,6 +40,8 @@ $route['check_email']                    = 'web/check_email';
 $route['dashboard']            = 'admin/index';
 $route['manage/order']         = 'manageorder/manage_order';
 $route['order/details/(:num)'] = 'manageorder/order_details/$1';
+$route['delete/order/(:num)']      = 'manageorder/cancella_order/$1';
+
 
 //Category  Route List
 $route['add/category']                = 'category/add_category';

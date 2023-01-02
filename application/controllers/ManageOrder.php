@@ -23,19 +23,26 @@ class ManageOrder extends CI_Controller
     {
         $data        = array();
         $order_info  = $this->manageorder_model->order_info_by_id($order_id);
-        $customer_id = $order_info->customer_id;
-        $shipping_id = $order_info->shipping_id;
-        $payment_id  = $order_info->payment_id;
+        $customer_id = $order_info->piva;
+        $shipping_id = $order_info->piva;
 
         $data['customer_info']      = $this->manageorder_model->customer_info_by_id($customer_id);
         $data['shipping_info']      = $this->manageorder_model->shipping_info_by_id($shipping_id);
-        $data['payment_info']       = $this->manageorder_model->payment_info_by_id($payment_id);
         $data['order_details_info'] = $this->manageorder_model->orderdetails_info_by_id($order_id);
         $data['order_info']         = $this->manageorder_model->order_info_by_id($order_id);
 
         $data['maincontent'] = $this->load->view('admin/pages/order_details', $data, true);
         $this->load->view('admin/master', $data);
     }
+
+	public function cancella_order($order_id)
+	{
+		$this->manageorder_model->delete_order($order_id);
+		$data                          = array();
+		$data['all_manage_order_info'] = $this->manageorder_model->manage_order_info();
+		$data['maincontent']           = $this->load->view('admin/pages/manage_order', $data, true);
+		$this->load->view('admin/master', $data);
+	}
 
     public function get_user()
     {

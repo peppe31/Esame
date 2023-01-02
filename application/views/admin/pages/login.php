@@ -4,7 +4,7 @@
 
         <!-- start: Meta -->
         <meta charset="utf-8">
-        <title>E-Shop Login Panel</title>
+        <title>Polyplant Admin Login</title>
         <meta name="description" content="E-Shop Login Panel">
         <meta name="author" content="Rostom Ali">
         <meta name="keyword" content="E-Shop Login Panel">
@@ -55,7 +55,7 @@
                             <a href="<?php echo base_url('dashboard');?>"><i class="halflings-icon home"></i></a>
                             <a href="#"><i class="halflings-icon cog"></i></a>
                         </div>
-                        <h2>Login to your account</h2>
+                        <h2>Login</h2>
                         <style type="text/css">
                             #result{color:red}
                             #result p{color:red}
@@ -68,17 +68,17 @@
 
                                 <div class="input-prepend" title="User Email">
                                     <span class="add-on"><i class="halflings-icon user"></i></span>
-                                    <input class="input-large span10" value="<?php set_value('user_name');?>" name="user_email" id="user_email" type="text" placeholder="type useremail"/>
+                                    <input class="input-large span10" value="<?php set_value('user_name');?>" name="user_email" id="user_email" type="text" placeholder="Admin Email"/>
                                 </div>
                                 <div class="clearfix"></div>
 
                                 <div class="input-prepend" title="User Password">
                                     <span class="add-on"><i class="halflings-icon lock"></i></span>
-                                    <input class="input-large span10" name="user_password" id="user_password" type="password" placeholder="type password"/>
+                                    <input class="input-large span10" name="user_password" id="user_password" type="password" placeholder="Admin Password"/>
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <label class="remember" for="remember"><input type="checkbox" id="remember" />Remember me</label>
+                                <label class="remember" for="remember"><input type="checkbox" id="remember" />Ricordami</label>
 
                                 <div class="button-login">	
                                     <button type="submit" class="btn btn-primary adminlogincheck">Login</button>
@@ -88,9 +88,9 @@
   
                         </form>
                         <hr>
-                        <h3>Forgot Password?</h3>
+                        <h3>Password dimenticata?</h3>
                         <p>
-                            No problem, <a href="#">click here</a> to get a new password.
+                            No problem, <a href="#">clicca qui</a>.
                         </p>	
                     </div><!--/span-->
                 </div><!--/row-->

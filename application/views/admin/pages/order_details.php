@@ -8,13 +8,13 @@
             <a href="<?php echo base_url('dashboard') ?>">Home</a> 
             <i class="icon-angle-right"></i>
         </li>
-        <li><a href="<?php echo base_url('manage/order') ?>">Order Details</a></li>
+        <li><a href="<?php echo base_url('manage/order') ?>">Dettagli ordine</a></li>
     </ul>
 
     <div class="row-fluid sortable">		
         <div class="box span12">
             <div class="box-header" data-original-title>
-                <h2><i class="halflings-icon user"></i><span class="break"></span>Order Details</h2>
+                <h2><i class="halflings-icon user"></i><span class="break"></span>Dettagli ordine</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -34,45 +34,37 @@
 
             <div class="box-content">
                 <div class="span4 text-left">
-                    <h2>Customer Info(00<?php echo $customer_info->customer_id; ?>)</h2>
+                    <h2>Cliente Info(<?php echo $customer_info->piva; ?>)</h2>
                     <table class="table table-striped table-bordered">
                         <tr>
-                            <td>Customer Name : </td>
-                            <td><?php echo $customer_info->customer_name; ?></td>
+                            <td>Nome Cliente : </td>
+                            <td><?php echo $customer_info->nome; ?></td>
                         </tr>
+						<tr>
+							<td>Cognome Cliente : </td>
+							<td><?php echo $customer_info->cognome; ?></td>
+						</tr>
                         <tr>
-                            <td>Customer Adress : </td>
-                            <td><?php echo $customer_info->customer_address; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Customer Mobile : </td>
-                            <td><?php echo $customer_info->customer_phone; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Customer Email : </td>
-                            <td><?php echo $customer_info->customer_email; ?></td>
+                            <td>Email : </td>
+                            <td><?php echo $customer_info->mail; ?></td>
                         </tr>
                     </table>
                 </div>
                 <div class="span4"></div>
                 <div class="span4 text-right" class="table table-striped table-bordered">
-                    <h2>Customer Info(00<?php echo $shipping_info->shipping_id; ?>)</h2>
+                    <h2>Indirizzo Info(<?php echo $shipping_info->piva; ?>)</h2>
                     <table class="table table-striped table-bordered">
+						<tr>
+							<td>Città : </td>
+							<td><?php echo $customer_info->citta; ?></td>
+						</tr>
+						<tr>
+							<td>Indirizzo : </td>
+							<td><?php echo $customer_info->via." ".$customer_info->civico; ?></td>
+						</tr>
                         <tr>
-                            <td>Shpping Name : </td>
-                            <td><?php echo $shipping_info->shipping_name; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Adress : </td>
-                            <td><?php echo $shipping_info->shipping_address; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Mobile : </td>
-                            <td><?php echo $shipping_info->shipping_phone; ?></td>
-                        </tr>
-                        <tr>
-                            <td>Shipping Email : </td>
-                            <td><?php echo $shipping_info->shipping_email; ?></td>
+                            <td>CAP : </td>
+                            <td><?php echo $shipping_info->cap; ?></td>
                         </tr>
                     </table>
                 </div>
@@ -80,12 +72,12 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Sr.</th>
-                            <th>Product Name</th>
-                            <th>Product Image</th>
-                            <th>Product Price</th>
-                            <th>Product Qty</th>
-                            <th>Product Subtotal</th>
+                            <th>#</th>
+                            <th>Nome prodotto</th>
+                            <th>Immagine prodotto</th>
+                            <th>Costo</th>
+                            <th>Quantità</th>
+                            <th>Totale</th>
                         </tr>
                     </thead>   
                     <tbody>
@@ -96,17 +88,17 @@
                             ?>
                             <tr>
                                 <td><?php echo $i; ?></td>
-                                <td><?php echo $single_order_details->product_name ?></td>
-                                <td><img src="<?php echo base_url('uploads/'.$single_order_details->product_image);?>" style="width:200px;height:100px"/></td>
-                                <td><?php echo $this->cart->format_number($single_order_details->product_price)?> Tk</td>
-                                <td><?php echo $single_order_details->product_sales_quantity ?></td>
-                                <td><?php echo $this->cart->format_number($single_order_details->product_price * $single_order_details->product_sales_quantity) ?> Tk</td>
+                                <td><?php echo $single_order_details->nome ?></td>
+                                <td><img src="<?php echo base_url($single_order_details->immagine);?>" style="width:200px;height:100px"/></td>
+                                <td><?php echo $this->cart->format_number($single_order_details->costo)?> $</td>
+                                <td><?php echo $single_order_details->quantita ?></td>
+                                <td><?php echo $this->cart->format_number($single_order_details->costo * $single_order_details->quantita) ?> $</td>
                             </tr>
                         <?php } ?>
                     </tbody>
                     <tfooter>
-                        <td colspan="5">Total Amount</td>
-                        <td>= <?php echo $this->cart->format_number($order_info->order_total)?> Tk</td>
+                        <td colspan="5">Totale ordine</td>
+                        <td>= <?php echo $this->cart->format_number($order_info->costo_totale)?> $</td>
                     </tfooter>
                 </table>            
             </div>
