@@ -27,7 +27,7 @@ class Impiegato_model extends CI_Model
 
     public function delete_impiegato_info($id)
     {
-        $this->db->where('impiegato', $id);
+        $this->db->where('cod_impiegato', $id);
         return $this->db->delete('impiegato');
     }
 

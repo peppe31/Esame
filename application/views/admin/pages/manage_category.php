@@ -8,13 +8,13 @@
             <a href="<?php echo base_url('dashboard') ?>">Home</a> 
             <i class="icon-angle-right"></i>
         </li>
-        <li><a href="<?php echo base_url('manage/category') ?>">Manage Category</a></li>
+        <li><a href="<?php echo base_url('manage/category') ?>">Gestisci impiegati</a></li>
     </ul>
 
     <div class="row-fluid sortable">		
         <div class="box span12">
             <div class="box-header" data-original-title>
-                <h2><i class="halflings-icon user"></i><span class="break"></span>Manage Category</h2>
+                <h2><i class="halflings-icon user"></i><span class="break"></span>Gestisci impiegati</h2>
                 <div class="box-icon">
                     <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
                     <a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
@@ -32,11 +32,12 @@
                 <table class="table table-striped table-bordered bootstrap-datatable datatable">
                     <thead>
                         <tr>
-                            <th>Sr.</th>
-                            <th>Category Name</th>
-                            <th>Category Description</th>
-                            <th>Publication Status</th>
-                            <th>Actions</th>
+                            <th>Codice impiegato</th>
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>E-mail</th>
+                            <th>Tipo</th>
+							<th>Azioni</th>
                         </tr>
                     </thead>   
                     <tbody>
@@ -46,38 +47,23 @@
                             $i++;
                             ?>
                             <tr>
-                                <td><?php echo $i; ?></td>
-                                <td><?php echo $single_category->category_name ?></td>
-                                <td><?php echo $single_category->category_description ?></td>
-                                <td class="center">
-                                    <?php if ($single_category->publication_status == 1) { ?>
-                                        <span class="label label-success">Published</span>
+                                <td><?php echo $single_category->cod_impiegato; ?></td>
+                                <td><?php echo $single_category->nome ?></td>
+                                <td><?php echo $single_category->cognome ?></td>
+								<td><?php echo $single_category->mail ?></td>
+								<td class="center">
+                                    <?php if ($single_category->tipo == true) { ?>
+                                        <span class="label label-success">Amministratore</span>
                                     <?php } else {
                                         ?>
-                                        <span class="label label-danger" style="background:red">Unpublished</span>
+                                        <span class="label label-danger" style="background:red">Impiegato</span>
                                         <?php }
                                     ?>
                                 </td>
-                                <td class="center">
-                                    <?php if ($single_category->publication_status == 0) { ?>
-                                        <a class="btn btn-success" href="<?php echo base_url('published/category/' . $single_category->id); ?>">
-                                            <i class="halflings-icon white thumbs-up"></i>  
-                                        </a>
-                                    <?php } else {
-                                        ?>
-                                        <a class="btn btn-danger" href="<?php echo base_url('unpublished/category/' . $single_category->id); ?>">
-                                            <i class="halflings-icon white thumbs-down"></i>  
-                                        </a>
-                                        <?php }
-                                    ?>
+								<td>
+									<a class="btn btn-danger" href="<?php echo base_url('category/delete_category/'.$single_category->cod_impiegato);?>">Cancella</a>
+								</td>
 
-                                    <a class="btn btn-info" href="<?php echo base_url('edit/category/' . $single_category->id); ?>">
-                                        <i class="halflings-icon white edit"></i>  
-                                    </a>
-                                    <a class="btn btn-danger" href="<?php echo base_url('delete/category/' . $single_category->id); ?>">
-                                        <i class="halflings-icon white trash"></i> 
-                                    </a>
-                                </td>
 
                             </tr>
                         <?php } ?>

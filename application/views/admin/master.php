@@ -90,11 +90,13 @@
                         <ul class="nav nav-tabs nav-stacked main-menu">
                             <li><a href="<?php echo base_url('dashboard')?>"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
                             <?php if ($this->session->userdata('tipo')==true){?>
-							<li><a href="<?php echo base_url('add/brand')?>"><i class="icon-edit"></i><span class="hidden-tablet"> Aggiungi serra</span></a></li>
-                            <li><a href="<?php echo base_url('manage/brand')?>"><i class="icon-list-alt"></i><span class="hidden-tablet"> Gestisci serre</span></a></li>
-                            <?php }?>
+							<li><a href="<?php echo base_url('add/brand')?>"><i class="icon-plus"></i><span class="hidden-tablet"> Aggiungi serra</span></a></li>
+                            <li><a href="<?php echo base_url('manage/brand')?>"><i class="icon-search"></i><span class="hidden-tablet"> Gestisci serre</span></a></li>
+								<li><a href="<?php echo base_url('add/category')?>"><i class="icon-plus-sign"></i><span class="hidden-tablet"> Aggiungi impiegato</span></a></li>
+								<li><a href="<?php echo base_url('manage/category')?>"><i class="icon-tasks"></i><span class="hidden-tablet"> Gestisci impiegati</span></a></li>
+							<?php }?>
                             <li><a href="<?php echo base_url('add/product')?>"><i class="icon-eye-open"></i><span class="hidden-tablet"> Aggiungi prodotto</span></a></li>
-                            <li><a href="<?php echo base_url('manage/product')?>"><i class="icon-dashboard"></i><span class="hidden-tablet"> Gestisci prodotti</span></a></li>
+                            <li><a href="<?php echo base_url('manage/product')?>"><i class="icon-list"></i><span class="hidden-tablet"> Gestisci prodotti</span></a></li>
                             <li><a href="<?php echo base_url('manage/order');?>"><i class="icon-calendar"></i><span class="hidden-tablet"> Gestisci ordini</span></a></li>
                         </ul>
                     </div>

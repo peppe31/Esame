@@ -51,7 +51,7 @@
 						<tr>
 							<td>Tipo : </td>
 							<td><?php if ($this->session->userdata('tipo')==true)
-							{echo "Amminstratore";
+							{echo "Amministratore";
 							} else{ echo"Impiegato";} ?></td>
 						</tr>
                     </table>
