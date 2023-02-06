@@ -9,7 +9,7 @@ class Web extends CI_Controller
     {
         $data                          = array();
 		$data['prodotti']=$this->speciePiantina_model->get_all_product();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
 		$this->load->view('web/pages/home', $data);
 		$this->load->view('web/inc/footer');
 
@@ -18,7 +18,7 @@ class Web extends CI_Controller
     public function contact()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/contact');
         $this->load->view('web/inc/footer');
     }
@@ -27,7 +27,7 @@ class Web extends CI_Controller
 	{
 		$data                          = array();
 		$data['prodotti']=$this->speciePiantina_model->get_all_product();
-		$this->load->view('web/inc/header');
+		$this->load->view('web/inc/header2');
 		$this->load->view('web/pages/product', $data);
 		$this->load->view('web/inc/footer');
 	}
@@ -36,7 +36,7 @@ class Web extends CI_Controller
     {
         $data                  = array();
         $data['cart_contents'] = $this->cart->contents();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/cart', $data);
         $this->load->view('web/inc/footer');
     }
@@ -45,7 +45,7 @@ class Web extends CI_Controller
     {
         $data                       = array();
         $data['prodotto'] = $this->speciePiantina_model->get_single_specie($id);
-		$this->load->view('web/inc/header');
+		$this->load->view('web/inc/header2');
 		$this->load->view('web/pages/single', $data);
 		$this->load->view('web/inc/footer');
     }
@@ -53,7 +53,7 @@ class Web extends CI_Controller
     public function error()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/error');
         $this->load->view('web/inc/footer');
     }
@@ -62,7 +62,7 @@ class Web extends CI_Controller
     {
         $data                    = array();
         $data['get_all_product'] = $this->web_model->get_all_product_by_cat($id);
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/product', $data);
         $this->load->view('web/inc/footer');
     }
@@ -104,7 +104,7 @@ class Web extends CI_Controller
     public function register_success()
     {
 
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/register_success');
         $this->load->view('web/inc/footer');
     }
@@ -112,7 +112,7 @@ class Web extends CI_Controller
     public function user_form()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/user_form');
         $this->load->view('web/inc/footer');
     }
@@ -120,7 +120,7 @@ class Web extends CI_Controller
     public function customer_register()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/customer_register');
         $this->load->view('web/inc/footer');
     }
@@ -128,7 +128,7 @@ class Web extends CI_Controller
     public function customer_login()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/customer_login');
         $this->load->view('web/inc/footer');
     }
@@ -232,7 +232,7 @@ class Web extends CI_Controller
     public function customer_shipping()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/customer_shipping');
         $this->load->view('web/inc/footer');
     }
@@ -241,7 +241,7 @@ class Web extends CI_Controller
     public function checkout()
     {
         $data = array();
-        $this->load->view('web/inc/header');
+        $this->load->view('web/inc/header2');
         $this->load->view('web/pages/checkout');
         $this->load->view('web/inc/footer');
     }
@@ -283,7 +283,7 @@ class Web extends CI_Controller
             $data['search']          = $search;
 
             if ($data['get_all_product']) {
-                $this->load->view('web/inc/header');
+                $this->load->view('web/inc/header2');
                 $this->load->view('web/pages/search', $data);
                 $this->load->view('web/inc/footer');
             } else {
@@ -303,7 +303,7 @@ class Web extends CI_Controller
 
 	public function payment()
 	{
-		$this->load->view('web/inc/header');
+		$this->load->view('web/inc/header2');
 		$this->load->view('web/pages/payment');
 		$this->load->view('web/inc/footer');
 	}

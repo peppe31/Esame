@@ -1,17 +1,5 @@
 <!DOCTYPE HTML>
-<head>
-    <title>PolyPlant</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href=<?php echo base_url("assets/web/css/style.css"); ?> rel="stylesheet" type="text/css" media="all"/>
-    <link href=<?php echo base_url("assets/web/css/menu.css"); ?> rel="stylesheet" type="text/css" media="all"/>
 
-    <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon" href="" />
-</head>
-<body>
-    <div class="wrap">
         <div class="header_top">
             <div class="logo">
                 <a href=<?php echo base_url('/');?>><img style="width: 350px;height:180px" src=<?php echo base_url("assets/web/images/immagini/logo.png");?> alt="" /></a>
@@ -58,7 +46,8 @@
                 if ($this->uri->uri_string() == 'prodotti') {
                     echo "active";
                 }
-                ?>"><a href="<?php echo base_url("/product");?>">Prodotti</a> </li>
+                ?>"><a href="<?php echo base_url("/product");?>">Prodotti</a>
+				</li>
                     <?php if ($this->cart->total_items()) { ?>
                     <li class="<?php
                     if ($this->uri->uri_string() == 'cart') {
@@ -71,9 +60,9 @@
                     echo "active";
                 }
                 ?>"><a href="<?php echo base_url('/contact')?>">Contattaci</a> </li>
-                
+
                 <?php if(!$this->session->userdata('customer_id')){?>
-                
+
                 <li class="<?php
                 if ($this->uri->uri_string() == 'admin') {
                     echo "active";
@@ -84,9 +73,9 @@
                     echo "active";
                 }
                 ?>"><a href="<?php echo base_url('customer/register')?>">Registrati</a> </li>
-                
+
                 <?php }?>
-                
+
             </ul>
             <div class="clear"></div>
         </div>
