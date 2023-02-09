@@ -13,7 +13,7 @@
                             <th width="10%">Prodotto</th>
                             <th width="15%">Costo</th>
                             <th width="20%">Quantità</th>
-                            <th width="15%">Costo totale</th>
+							<th width="15%">Costo totale</th>
                             <th width="5%">Rimuovi</th>
                         </tr>
                         <?php
@@ -33,7 +33,7 @@
                                         <input type="submit" name="submit" value="Aggiorna"/>
                                     </form>
                                 </td>
-                                <td>$ <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
+								<td>$ <?php echo $this->cart->format_number($cart_items['subtotal']) ?></td>
                                 <td>
                                     <form action="<?php echo base_url('remove/cart'); ?>" method="post">
                                         <input type="hidden" name="rowid" value="<?php echo $cart_items['rowid'] ?>"/>
@@ -73,7 +73,7 @@
             </div>
             <div class="shopping">
                 <div class="shopleft">
-                    <a href="<?php echo base_url('product') ?>"> <img src="<?php echo base_url() ?>assets/web/images/shop.png" alt="" /></a>
+                    <a href="<?php echo base_url('prodotti') ?>"> <img src="<?php echo base_url() ?>assets/web/images/shop.png" alt="" /></a>
                 </div>
                 <div class="shopright">
                     <?php

@@ -47,10 +47,10 @@ class Brand extends CI_Controller
     {
         $result = $this->serra_model->delete_serra_info($id);
         if ($result) {
-            $this->session->set_flashdata('message', 'Brand Deleted Sucessfully');
+            $this->session->set_flashdata('message', 'Serra eliminata correttamente');
             redirect('manage/brand');
         } else {
-            $this->session->set_flashdata('message', 'Brand Deleted Failed');
+            $this->session->set_flashdata('message', 'Eliminazione serra fallita');
             redirect('manage/brand');
         }
     }

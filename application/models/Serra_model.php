@@ -16,6 +16,14 @@ class Serra_model extends CI_Model
         return $info->result();
     }
 
+	public function get_capienza()
+	{
+		$this->db->select_sum('capienza');
+		$this->db->from('serra');
+		$query = $this->db->get();
+		return $query->row()->capienza;;
+	}
+
     public function edit_serra_info($id)
     {
         $this->db->select('*');
@@ -36,5 +44,7 @@ class Serra_model extends CI_Model
         $this->db->where('cod_serra', $id);
         return $this->db->update('serra', $data);
     }
+
+
 
 }

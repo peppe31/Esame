@@ -23,10 +23,19 @@ class Web extends CI_Controller
         $this->load->view('web/inc/footer');
     }
 
-	public function product()
+	public function prodotti()
 	{
 		$data                          = array();
 		$data['prodotti']=$this->speciePiantina_model->get_all_product();
+		$this->load->view('web/inc/header2');
+		$this->load->view('web/pages/prodotti', $data);
+		$this->load->view('web/inc/footer');
+	}
+
+	public function product($stagione)
+	{
+		$data                          = array();
+		$data['prodotti']=$this->speciePiantina_model->get_all_specie_stagione($stagione);
 		$this->load->view('web/inc/header2');
 		$this->load->view('web/pages/product', $data);
 		$this->load->view('web/inc/footer');
@@ -79,19 +88,86 @@ class Web extends CI_Controller
         $data['qty']     = $this->input->post('qty');
         $data['options'] = $results->immagine;
 
-        $this->cart->insert($data);
-        redirect('cart');
+
+		$oggi = strtotime("now");
+		$primavera = strtotime("20 March");
+		$estate = strtotime("20 June");
+		$inverno = strtotime("21 December");
+		$autunno = strtotime("21 September");
+
+		$controlloStagione=false;
+
+		if ($results->stagione == "Primavera") {
+			if ($oggi > $primavera && $oggi < $estate) {
+				$controlloStagione=true;
+			} else {
+				// codice da eseguire se la data attuale non è compresa tra le due date
+				$controlloStagione=false;
+			}
+		} else if ($results->stagione == "Autunno") {
+			if ($oggi > $autunno && $oggi < $inverno) {
+				$controlloStagione=true;
+			} else {
+				// codice da eseguire se la data attuale non è compresa tra le due date
+				$controlloStagione=false;
+			}
+		} else if ($results->stagione == "Inverno") {
+			if ($oggi > $inverno && $oggi < $primavera) {
+				$controlloStagione=false;
+			} else {
+				// codice da eseguire se la data attuale non è compresa tra le due date
+				$controlloStagione=true;
+			}
+		} else if ($results->stagione == "Estate") {
+			if ($oggi > $estate && $oggi < $autunno) {
+				$controlloStagione=true;
+
+			} else {
+				// codice da eseguire se la data attuale non è compresa tra le due date
+				$controlloStagione=false;
+			}
+		}
+
+
+		if ($controlloStagione==true) {
+			$capienza = $this->serra_model->get_capienza();
+			$consumo = $data['qty'];
+
+			if ($consumo<$capienza){
+				$this->cart->insert($data);
+				redirect('cart');
+			}else{
+				$this->session->set_flashdata('message', 'Attenzione il prodotto non è attualmente disponibile !');
+				redirect('single/'.$results->cod_specie);
+			}
+
+
+		}else{
+			$this->session->set_flashdata('message', 'Attenzione il prodotto non è disponibile in questa stagione !');
+			redirect('single/'.$results->cod_specie);
+		}
     }
 
-    public function update_cart()
+	public function update_cart()
+	{
+		$data          = array();
+		$data['qty']   = $this->input->post('qty');
+		$data['rowid'] = $this->input->post('rowid');
+
+
+		$this->cart->update($data);
+		redirect('cart');
+	}
+
+    public function update_date_cart()
     {
-        $data          = array();
-        $data['qty']   = $this->input->post('qty');
-        $data['rowid'] = $this->input->post('rowid');
+		$data = $this->input->post('data_consegna');
 
-        $this->cart->update($data);
-        redirect('cart');
+		$this->session->set_userdata('data_consegna', $data);
+
+		redirect('checkout');
     }
+
 
     public function remove_cart()
     {
@@ -240,7 +316,6 @@ class Web extends CI_Controller
 
     public function checkout()
     {
-        $data = array();
         $this->load->view('web/inc/header2');
         $this->load->view('web/pages/checkout');
         $this->load->view('web/inc/footer');
@@ -262,6 +337,9 @@ class Web extends CI_Controller
 			$nome         = $oddatas['name'];
 			$odata['cod_specie']=$this->speciePiantina_model->get_specie_by_nome($nome);
 			$odata['quantita'] = $oddatas['qty'];
+			$odata['data_consegna'] =$this->session->userdata('data_consegna');
+
+
 			$this->web_model->save_order_info($odata);
 		}
 

@@ -35,11 +35,13 @@
                     <thead>
                         <tr>
                             <th>#</th>
+							<th>Data ordine</th>
                             <th>Nome cliente</th>
                             <th>Partita iva</th>
                             <th>Mail</th>
                             <th>Totale</th>
-                            <th>Azioni</th>
+							<th>Data consegna</th>
+							<th>Azioni</th>
                         </tr>
                     </thead>   
                     <tbody>
@@ -50,11 +52,13 @@
                             ?>
                         <tr>
                             <td><?php echo $i;?></td>
-                            <td><?php echo $single_order->nome?></td>
+							<td><?php echo $single_order->data?></td>
+							<td><?php echo $single_order->nome?></td>
                             <td><?php echo $single_order->piva?></td>
                             <td><?php echo $single_order->mail?></td>
                             <td><?php echo $this->cart->format_number($single_order->costo_totale)?> $</td>
-                            <td>
+							<td><?php echo $single_order->data_consegna?></td>
+							<td>
                                 <a class="btn btn-warning" href="<?php echo base_url('order/details/'.$single_order->cod_ordine)?>">Dettagli</a>
                                 <a class="btn btn-danger" href="<?php echo base_url('delete/order/'.$single_order->cod_ordine);?>">Cancella</a>
                                 <a class="btn btn-success" href="<?php echo base_url('delete/order/'.$single_order->cod_ordine);?>">Spedisci</a>

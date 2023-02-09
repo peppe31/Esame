@@ -7,13 +7,14 @@ $route['404_override']         = 'web/error';
 $route['translate_uri_dashes'] = false;
 
 //Web Route
-
-$route['product']             = 'web/product';
+$route['prodotti']             = 'web/prodotti';
+$route['product/(:any)']             = 'web/product/$1';
 $route['single/(:any)']       = 'web/single/$1';
 $route['contact']             = 'web/contact';
 $route['cart']                = 'web/cart';
 $route['save/cart']           = 'web/save_cart';
 $route['update/cart']         = 'web/update_cart';
+$route['update/date/cart']    = 'web/update_date_cart';
 $route['remove/cart']         = 'web/remove_cart';
 $route['user_form']           = 'web/user_form';
 $route['get/category/(:num)'] = 'web/category_post/$1';

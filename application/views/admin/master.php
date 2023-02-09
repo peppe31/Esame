@@ -4,7 +4,7 @@
 
         <!-- start: Meta -->
         <meta charset="utf-8">
-        <title>Plyplant Admin Panel Dashboard</title>
+        <title>Poliplant - Admin</title>
         <meta name="description" content="Shop Admin Panel Dashboard">
         <meta name="author" content="Engr Rostom Ali">
         <meta name="keyword" content="Shop Admin Panel Dashboard">
@@ -34,7 +34,7 @@
         <![endif]-->
 
         <!-- start: Favicon -->
-        <link rel="shortcut icon" href="<?php echo base_url()?>assets/admin/img/favicon.jpg">
+        <link rel="shortcut icon" href="<?php echo base_url()?>assets/web/images/immagini/logo-small.png">
         <!-- end: Favicon -->
 
 
@@ -52,7 +52,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="<?php echo base_url('dashboard')?>"><span>Polyplant Admin Panel</span></a>
+                    <a class="brand" href="<?php echo base_url('dashboard')?>"><span>Poliplant - Admin</span></a>
 
                     <!-- start: Header Menu -->
                     <div class="nav-no-collapse header-nav">
@@ -134,7 +134,7 @@
         <footer>
 
             <p>
-                <span style="text-align:left;float:left">&copy; 2013 <a href="http://jiji262.github.io/Bootstrap_Metro_Dashboard/" alt="Bootstrap_Metro_Dashboard">Bootstrap Metro Dashboard</a></span>
+                <span style="text-align:left;float:left">&copy; 2023 <a  alt="Dashboard">Poliplant - Politecnico di Bari - Bari</a></span>
 
             </p>
 

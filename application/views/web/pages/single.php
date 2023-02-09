@@ -21,6 +21,13 @@
                             <input type="submit" class="buysubmit" name="submit" value="Aggiungi al carrello"/>
                         </form>				
                     </div>
+					<style type="text/css">
+						#result{color:red;padding: 5px}
+						#result p{color:red}
+					</style>
+					<div id="result">
+						<p><?php echo $this->session->flashdata('message');?></p>
+					</div>
                 </div>
                 <div class="product-desc">
                     <h2>Dettagli prodotto</h2>
@@ -31,3 +38,4 @@
         </div>
     </div>
 </div>
+

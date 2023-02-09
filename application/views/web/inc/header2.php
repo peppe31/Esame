@@ -290,10 +290,8 @@
 <link href="<?php echo base_url() ?>assets/web/css/menu.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="<?php echo base_url() ?>assets/web/js/jquerymain.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/web/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/web/js/nav.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/web/js/move-top.js"></script>
 <script type="text/javascript" src="<?php echo base_url() ?>assets/web/js/easing.js"></script>
-<script type="text/javascript" src="<?php echo base_url() ?>assets/web/js/nav-hover.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
@@ -320,17 +318,16 @@
 				<div id="et-top-navigation" data-height="150" data-fixed-height="40">
 					<nav id="top-menu-nav">
 						<ul id="top-menu" class="nav"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-56"><a href="<?php echo base_url()?>">Home</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-60"><a href="<?php echo base_url("/product");?>">Prodotti</a>
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-60"><a href="<?php echo base_url("/prodotti");?>">Prodotti</a>
 								<ul class="sub-menu">
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-653"><a href="https://ortofruttacandela.it/grano/">Primavera</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="https://ortofruttacandela.it/bietola-costa/">Estate</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="https://ortofruttacandela.it/broccoli/">Autunno</a></li>
-									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461"><a href="https://ortofruttacandela.it/cavolfiore/">Inverno</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-653"><a href="<?php echo base_url("/product/Primavera");?>">Primavera</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-463"><a href="<?php echo base_url("/product/Estate");?>">Estate</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-464"><a href="<?php echo base_url("/product/Autunno");?>">Autunno</a></li>
+									<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-461"><a href="<?php echo base_url("/product/Inverno");?>">Inverno</a></li>
 								</ul>
 							</li>
 							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-218"><a href="<?php echo base_url("/cart");?>">Carrello</a></li>
 							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-548"><a href="<?php echo base_url("/contact");?>">Contattaci</a></li>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-765"><a href="<?php echo base_url("/admin");?>">Admin</a></li>
 							<?php
 							$customer_id = $this->session->userdata('customer_id');
 							if ($customer_id) {
@@ -338,11 +335,13 @@
 								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-765"><a href="<?php echo base_url("customer/logout");?>">Logout</a></li>
 							<?php } else {
 								?>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-765"><a href="<?php echo base_url("/admin");?>">Admin</a></li>
 								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-765"><a href="<?php echo base_url("customer/login");?>">Login</a></li>
+								<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="<?php echo base_url("customer/register");?>">Registrati</a></li>
+
 								<?php
 							}
 							?>
-							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59"><a href="<?php echo base_url("customer/register");?>">Registrati</a></li>
 						</ul>					</nav>
 
 

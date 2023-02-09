@@ -4,7 +4,7 @@
 
         <!-- start: Meta -->
         <meta charset="utf-8">
-        <title>Polyplant Admin Login</title>
+        <title>Poliplant - Admin Login</title>
         <meta name="description" content="E-Shop Login Panel">
         <meta name="author" content="Rostom Ali">
         <meta name="keyword" content="E-Shop Login Panel">
@@ -34,7 +34,7 @@
         <![endif]-->
 
         <!-- start: Favicon -->
-        <link rel="shortcut icon" href="<?php echo base_url()?>assets/admin/img/favicon.jpg">
+        <link rel="shortcut icon" href="<?php echo base_url()?>assets/web/images/immagini/logo-small.png">
         <!-- end: Favicon -->
 
         <style type="text/css">
@@ -52,10 +52,9 @@
                 <div class="row-fluid">
                     <div class="login-box">
                         <div class="icons">
-                            <a href="<?php echo base_url('dashboard');?>"><i class="halflings-icon home"></i></a>
-                            <a href="#"><i class="halflings-icon cog"></i></a>
+                            <a href="<?php echo base_url('');?>"><i class="halflings-icon home"></i></a>
                         </div>
-                        <h2>Login</h2>
+                        <h2 style="font-size:22px;color: #4b871b">Login</h2>
                         <style type="text/css">
                             #result{color:red}
                             #result p{color:red}
@@ -78,7 +77,7 @@
                                 </div>
                                 <div class="clearfix"></div>
 
-                                <label class="remember" for="remember"><input type="checkbox" id="remember" />Ricordami</label>
+                                <label style="color: #4b871b" class="remember" for="remember"><input type="checkbox" id="remember" />Ricordami</label>
 
                                 <div class="button-login">	
                                     <button type="submit" class="btn btn-primary adminlogincheck">Login</button>

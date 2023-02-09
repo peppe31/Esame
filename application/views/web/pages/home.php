@@ -10,7 +10,7 @@
 			<div class="entry-content">
 				<div class="et-l et-l--post">
 					<div class="et_builder_inner_content et_pb_gutters3">
-						<div style="background-image: url(assets/web/images/immagini/home.png)!important;"
+						<div style="background-image: url(assets/web/images/immagini/serra-large.png)!important;"
 							 class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular et_section_transparent">
 
 
@@ -249,7 +249,7 @@
 										 class="et_pb_module et_pb_text et_pb_text_5  et_pb_text_align_center et_pb_bg_layout_light">
 
 
-										<div class="et_pb_text_inner"><h1>Il nostro team</h1></div>
+										<div class="et_pb_text_inner"><h1 style="font-size: 30px">Il nostro team</h1></div>
 									</div>
 								</div>
 

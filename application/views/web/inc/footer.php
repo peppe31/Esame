@@ -35,7 +35,7 @@
 
 
 						<span class="et_pb_image_wrap ">
-							<img loading="lazy" width="1430" height="900" src="<?php echo base_url("/assets/web/images/immagini/logo.png");?>" alt="" title="logo-poliplant" class="wp-image-723"></span>
+							<img loading="lazy" width="1430" height="900" src="<?php echo base_url("/assets/web/images/immagini/logonero.png");?>" alt="" title="logo-poliplant" class="wp-image-723"></span>
 				</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix  et_pb_text_align_center et_pb_bg_layout_light">
 
 

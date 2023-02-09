@@ -1,5 +1,5 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
-article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0;padding:0;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
@@ -31,12 +31,6 @@ body{
     padding:0 1%;
     background:#FFF;
 }
-.header{
-    background:#FFF;
-}
-.header_top{
-    padding:20px 0;
-}
 .logo{
     float:left;
     width:33%;
@@ -44,11 +38,7 @@ body{
 
 
 /**** Header Top Right ****/
-.header_top_right{
-    float:left;
-    width:67%;
-    margin-top:35px;
-}
+
 .search_box{
     float:left;
     position:relative;
@@ -501,12 +491,7 @@ button.grey:hover,.search button.grey:hover{
     background:#70389C;
     text-decoration:none; 
 }
-.header_bottom_right_images{
-    float:left;
-    width:49%;
-    margin-left:1%;
-    padding-top: 15px;
-}
+
 .content{
     padding:20px 0;
     background:#FFF;
@@ -1460,7 +1445,6 @@ table.tblone img {
     outline:none;
     color:#464646;
     font-size:0.8125em;
-    font-family:Arial, Helvetica, sans-serif;
     box-shadow: inset 0px 0px 3px #999;
     -webkit-box-shadow: inset 0px 0px 3px #999;
     -moz-box-shadow: inset 0px 0px 3px #999;
@@ -1475,7 +1459,6 @@ table.tblone img {
     padding:7px 25px;
     cursor:pointer;
     background:#FFF url(../images/large-button-overlay.png);
-    font-family:Arial, Helvetica, sans-serif;
     position:absolute;
     right:0;
     border: 1px solid #ccc;
@@ -1643,13 +1626,6 @@ table.tblone img {
     }
     .sort, .show {
         width:24%;
-    }
-    .header_bottom_left,.header_bottom_right_images{
-        float:inherit;
-        width:100%;
-    }
-    .header_bottom_right_images {
-        margin-left:0;
     }
     .listview_1_of_2{
         margin: 1.4% 0 0% 1.6%;
@@ -1862,16 +1838,7 @@ table.tblone img {
         width:90%;
     }	
     /*** Header ****/
-    .logo{
-        float:inherit;
-        width:100%;
-        text-align:center;
-    }
-    .header_top_right {
-        float:inherit;
-        width:100%;
-        margin-top:20px;
-    }
+
     .search_box {
         float:inherit;
         width:100%;
@@ -1908,9 +1875,7 @@ table.tblone img {
         margin:2% 0 0% 0%;
     }
     /* Content */
-    .content_top {
-        padding:15px 10px;
-    }
+
     .heading {
         margin-right:0%;
         width:100%;
@@ -2121,16 +2086,6 @@ table.tblone img {
         width:90%;
     }	
     /*** Header ****/
-    .logo{
-        float:inherit;
-        width:100%;
-        text-align:center;
-    }
-    .header_top_right {
-        float:inherit;
-        width:100%;
-        margin-top:20px;
-    }
     .search_box {
         float:inherit;
         width:100%;
