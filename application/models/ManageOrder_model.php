@@ -16,6 +16,7 @@ class Manageorder_Model extends CI_Model
 	{
 		$this->db->select('*');
 		$this->db->from('ordine');
+		$this->db->join('cliente', 'ordine.piva = cliente.piva');
 		$this->db->where('cod_ordine', $order_id);
 		$result = $this->db->get();
 		return $result->row();

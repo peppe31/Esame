@@ -59,7 +59,7 @@ $autoload['helper'] = array('url');
 |
 |    $autoload['libraries'] = array('user_agent' => 'ua');
  */
-$autoload['libraries'] = array('database', 'session', 'form_validation', 'upload', 'cart');
+$autoload['libraries'] = array('database', 'session', 'form_validation', 'upload', 'cart','email');
 
 /*
 | -------------------------------------------------------------------

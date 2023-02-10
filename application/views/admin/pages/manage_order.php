@@ -61,7 +61,7 @@
 							<td>
                                 <a class="btn btn-warning" href="<?php echo base_url('order/details/'.$single_order->cod_ordine)?>">Dettagli</a>
                                 <a class="btn btn-danger" href="<?php echo base_url('delete/order/'.$single_order->cod_ordine);?>">Cancella</a>
-                                <a class="btn btn-success" href="<?php echo base_url('delete/order/'.$single_order->cod_ordine);?>">Spedisci</a>
+                                <a class="btn btn-success" href="<?php echo base_url('invia/ordine/'.$single_order->cod_ordine);?>">Spedisci</a>
                             </td>
                         </tr>
                         <?php }?>

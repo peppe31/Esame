@@ -4,7 +4,7 @@
     <div class="content">
         <div class="cartoption">		
             <div class="cartpage">
-                <h2>Carrello</h2>
+				<h1 style="font-size: 40px"><strong>Carrello</strong></h1>
                 <?php if ($this->cart->total_items()) { ?>
                     <table class="tblone">
                         <tr>

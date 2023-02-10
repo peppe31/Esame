@@ -42,6 +42,7 @@ $route['dashboard']            = 'admin/index';
 $route['manage/order']         = 'manageorder/manage_order';
 $route['order/details/(:num)'] = 'manageorder/order_details/$1';
 $route['delete/order/(:num)']      = 'manageorder/cancella_order/$1';
+$route['invia/ordine/(:num)']      = 'manageorder/invia_ordine/$1';
 
 
 //Category  Route List

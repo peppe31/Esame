@@ -1,10 +1,10 @@
 
 
-<div class="main">
+<div style="margin-right: 10px;margin-left: 10px" class="main">
     <div class="content">
         <div class="content_top">
             <div class="heading">
-                <h3>Prodotti</h3>
+				<h1 style="font-size: 40px"><strong>Prodotti</strong></h1>
             </div>
             <div class="clear"></div>
         </div>
